@@ -24,3 +24,21 @@ or:
 echo -en 'text\ntext'
 or change the order:
 echo -ne 'text\ntext'
+
+=============================================
+pwd & cd
+--------
+current directory:
+pwd
+
+change directory:
+cd [directory_name]
+
+navigate to root folder:
+cd /
+
+navigate ot home directory:
+cd or cd ~
+
+move into parent directory:
+cd .. or cd ../..
