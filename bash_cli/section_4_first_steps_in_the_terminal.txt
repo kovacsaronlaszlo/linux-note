@@ -1,0 +1,26 @@
+echo
+----
+check which version of bash is used: echo "${BASH_VERSION}"
+
+if we are not in bash, just wirte "bash" and hit enter
+
+to output text in terminal:
+echo 'text'
+    - echo is the command
+    - text is an argument(s)
+
+to putput text in terminal without line break:
+echo -n 'text'
+    -  '-n' is an option
+
+to enable backlash escapes
+echo -e 'text\ntext'
+    - without '-e' option the reulst looks like this:
+        text\ntext, the \n wont be converted into a line break
+
+can be combined more options:
+echo -e -n 'text\ntext'
+or:
+echo -en 'text\ntext'
+or change the order:
+echo -ne 'text\ntext'
