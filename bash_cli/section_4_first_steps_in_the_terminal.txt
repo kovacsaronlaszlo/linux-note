@@ -25,7 +25,7 @@ echo -en 'text\ntext'
 or change the order:
 echo -ne 'text\ntext'
 
-=============================================
+============================================
 pwd & cd
 --------
 current directory:
@@ -42,3 +42,27 @@ cd or cd ~
 
 move into parent directory:
 cd .. or cd ../..
+
+============================================
+ls
+--
+ls - content of the directoty
+
+syntax of ls:
+ls [options...] [path]
+
+ls -a - list all entries including the hidden files
+
+ls -r - reverse order while sorting
+
+ls -t sort by modification time, newest first
+
+ls -tr - the two option of abover (-t and -r)
+
+ls --color - its a pattern
+    => enables colorful output
+    => --color={always,never,auto} => ls --color=never (no colors!!!!)
+    => can use woth other options => ls -ta --color
+
+advanced example with path:
+ls -ta --color ~/Desktop
