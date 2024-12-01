@@ -66,3 +66,20 @@ ls --color - its a pattern
 
 advanced example with path:
 ls -ta --color ~/Desktop
+
+============================================
+Path types: absolute vs realitve path
+
+absolute path:
+    - start with: /
+    - define the complete path of file
+    example: 
+        # /home/karon/Desktop
+        # ~/Dekstop
+
+relative path:
+    - are being resolved according to our current working directory
+    example:
+        # ./Desktop
+        # Desktop
+        # ../Desktop
