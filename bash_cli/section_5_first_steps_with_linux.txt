@@ -1,0 +1,14 @@
+user management
+- system accounts
+    # response for running background tasks
+    # dont have home directory
+- regular users
+    # have acces to their files and directories
+    # cannot perfomr administrative tasks or access other user's files without permission
+- super user (root)
+    # has unrestricted access to the entire system
+    # can add/remove users, install/remove softwares
+    # change the configuration
+
+============================================
+
