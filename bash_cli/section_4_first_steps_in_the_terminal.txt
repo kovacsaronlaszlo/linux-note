@@ -83,3 +83,11 @@ relative path:
         # ./Desktop
         # Desktop
         # ../Desktop
+
+============================================
+
+executing multiply commands using ';'
+[command1]; [command2] 
+example: 
+    - echo -n "Hello "; echo "World" => Hello World
+    - cd ..; cd Desktop; ls => list files and folders in Desktop folder
