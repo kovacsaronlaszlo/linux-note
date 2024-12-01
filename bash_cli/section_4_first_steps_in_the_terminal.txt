@@ -91,3 +91,13 @@ executing multiply commands using ';'
 example: 
     - echo -n "Hello "; echo "World" => Hello World
     - cd ..; cd Desktop; ls => list files and folders in Desktop folder
+
+============================================
+how to get help?
+--help or man commands
+
+--help:
+    example: ls --help
+
+man (check build in manuals)
+    example: man ls
