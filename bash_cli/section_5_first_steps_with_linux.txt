@@ -12,3 +12,9 @@ user management
 
 ============================================
 
+"sudo" command - if we want to temporarily elevate our privilages
+
+!!!44!!!4!!!! always make sure you understand what a command does!!!!
+exmaple:
+    sudo rm -rf /etc => it will remove etc folder and destroy the whole system
+
