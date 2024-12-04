@@ -18,3 +18,5 @@ user management
 exmaple:
     sudo rm -rf /etc => it will remove etc folder and destroy the whole system
 
+if sudo doesnt work:
+    - you must turn the user into a regular user (but ith Admin rights)
