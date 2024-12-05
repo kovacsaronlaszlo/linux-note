@@ -20,3 +20,12 @@ exmaple:
 
 if sudo doesnt work:
     - you must turn the user into a regular user (but ith Admin rights)
+
+============================================
+
+package management
+    - most linux offers a centralized way to install softwares, this is package management
+    - help us to keep our system up to date
+    - different each linux distributions
+
+
