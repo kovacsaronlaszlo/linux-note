@@ -1,0 +1,10 @@
+touch and mkdir
+
+touch - create one or multiple files
+    example: touch aron.txt laszlo.txt
+    - to modify the timestamp of file
+    - if the files already exists, only its timestap will be modified
+    - otherwise, a new file is created
+    - to chaeck timestaps use this command: ls -l
+
+mkdir - create a new directory
