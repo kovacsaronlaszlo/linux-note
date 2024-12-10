@@ -28,4 +28,24 @@ package management
     - help us to keep our system up to date
     - different each linux distributions
 
+============================================
+install softwares with dnf
 
+
+keep system up to date:
+    sudo dnf upgrade or sudo dnf update
+        - fetch the latest version of package list
+        - upgrade our system
+    dnf always keeps the local package up to date
+
+install and remove softwares
+    - dnf install [package]
+        example: dnf install cowsay
+    - dnf remove [package]
+        example: dnf remove cowsay
+    Important!
+        - if you cant install the package try things under
+        - please install epel-release on your system
+        - this adds additional package lists to be able to install additional tools on your system
+        - command: dnf update; dnf install epel-release; dnf update;
+        - we should also run: crb enable
