@@ -1,4 +1,4 @@
-touch and mkdir
+touch and mkdir commands
 
 touch - create one or multiple files
     example: touch aron.txt laszlo.txt
@@ -8,3 +8,18 @@ touch - create one or multiple files
     - to chaeck timestaps use this command: ls -l
 
 mkdir - create a new directory
+
+============================================
+
+mv and cp commands
+
+mv
+    - move an existing file to another location:: mv [file_name] [path/directory_name/]
+    - can also be used to rename an existing file: mv [file_name] [new_file_name]
+    - can als be used to rename the file and change its location: mv [file_name] [directory_name/new_file_name]
+
+cp
+    - copy a file: cp [file_name] [new_file_name]
+    - we can copy and rename at the same time: cp [file_name] [directory_name/new_file_name]
+    - copy file into a folder: cp [file_name] [directory_name]
+    - create a backup or a copy of current folder: cp -R [directory_name] [directory_name_backup]
