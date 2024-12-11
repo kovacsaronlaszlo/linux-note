@@ -23,3 +23,16 @@ cp
     - we can copy and rename at the same time: cp [file_name] [directory_name/new_file_name]
     - copy file into a folder: cp [file_name] [directory_name]
     - create a backup or a copy of current folder: cp -R [directory_name] [directory_name_backup]
+
+============================================
+
+how to delete files?
+rm (remove)
+    - to remove files: rm [file_name] [other_file_name] ...
+    - for deleteing directory -r flag is needed
+    - also work for empty and none empty folders
+    important: its dangerous! the files and folders will be removed forever!
+
+rmdir (remove directory)
+    - only delete empty directories
+    - safer than rm -r command
