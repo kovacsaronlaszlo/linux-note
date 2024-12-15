@@ -36,3 +36,7 @@ rm (remove)
 rmdir (remove directory)
     - only delete empty directories
     - safer than rm -r command
+
+============================================
+
+filename expansion (globbing)
