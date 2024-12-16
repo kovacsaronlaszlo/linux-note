@@ -40,3 +40,22 @@ rmdir (remove directory)
 ============================================
 
 filename expansion (globbing)
+    - bash can rewrite our command before it is being executed
+    - globing recognizes and epands pre-defined wildcard characters
+    - it will then reserch for files thet match this pattern and expand (rewrite) or command
+    - allows to eccess multiple files
+    - wildcard character: *
+        # matches 0 to any number o characters
+        # example:  mv *.jpg imgs/  <== every file with .jpg ending move to "imgs" folder
+                    mv *.* [directory_name]  <== every file move to [directory_name]
+        # if there is no such files return an error:
+                    mv: cannot stat '*.jpg': No such file or directory
+        other example: echo *.jpg   <== shows every file name which name is end with .jpg
+
+Filename expansion:
+    IMPORTANT:
+        The wildcard character must not be quoted!!!
+        other interesting thing:
+            touch '*.JPG'  <== created a file which name is: *.JPG
+                # to move (rename) that file: mv '*.JPG' [directory_name]
+        Globbing does not use regular expressions!!!!
