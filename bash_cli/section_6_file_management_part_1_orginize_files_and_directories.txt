@@ -59,3 +59,13 @@ Filename expansion:
             touch '*.JPG'  <== created a file which name is: *.JPG
                 # to move (rename) that file: mv '*.JPG' [directory_name]
         Globbing does not use regular expressions!!!!
+
+============================================
+
+advanced globbing wildcards
+    - ?     => match any single haracter | example: echo bunn?1.*
+    - [0-9] => specify character range (all numbers) | example: echo bunny[1-9].[a-z]*
+    - **    => matcher zero up to arbitary many character (including /) | example: echo **/*.jpg
+        # only supported Bash 4.0
+        # it might be necessary to enable this: shopt -s globstar
+
