@@ -69,3 +69,25 @@ advanced globbing wildcards
         # only supported Bash 4.0
         # it might be necessary to enable this: shopt -s globstar
 
+============================================
+
+pitfalls of globbing: avoid traps in pattern matching
+# globbing can be dangerous sometimes
+# bash doesn't differentiate between a folder and a paramter
+# name of a file may be interpreted as a parameter
+# this is especially dangerous if a file has a name such as:
+    > -rf
+# if we then execute rm * is that folder:
+    > the * will be expanded, so -rf will appear in the command
+    > rm will think that -rf is a pramater
+        1. -r means recursive
+        2. -f means dont ask
+
+difference between "echo *" and "echo ./*"
+echo *
+important.txt letter.txt -rf
+echo ./*
+./important.txt ./letter.txt ./-rf
+difference between "rm *" and "rm ./*"
+rm * will remove all file including directories except -rf file, becuase the bash think its a command
+rm ./* will remove all of the files including -rf, except directories
