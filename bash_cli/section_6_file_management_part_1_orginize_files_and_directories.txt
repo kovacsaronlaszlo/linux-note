@@ -123,5 +123,20 @@ We need to provide all Excel- and PDF-Files for January and February from all de
 
 ============================================
 find program
-
-
+can use the "find" program for a more sophisticated search
+"find"
+    > should prived a path as a first parameter: "find ." list all file and folder in the folder where used
+    > limit the file type:
+        # "find . -type f" only files
+        # "find . -type d" only directories
+    > find all files that have been modified withing the last 7 days
+        # "find . -type f -mtime -7"
+            @ mtime: modification timestamp
+    > find all files that are larger than 10MB
+        # "find . -type f -size +10M"
+    > delete all empty files in a directory
+        # "find . -empty -delete"
+    > delete all files which size 1MB:
+        # "find . -type f -size +1M -delete"
+    > "find --help" short helper
+    > "man find" long and more detailed documentation, how to use "find"
