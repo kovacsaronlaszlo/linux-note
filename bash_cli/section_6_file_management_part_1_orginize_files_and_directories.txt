@@ -105,17 +105,23 @@ tips:
 > can combine multiple patterns into a single "cp" command:
     # cp [pattern1] [pattern2] [dest]
     # cp */**/*.jpg */**/*.dng folder 
+> install "tree" lib, than use "tree ." command
 
 questions:
 Take a look at the Folder- File-Structure
     How are the Folder and Files named?
-
+    tree .
     Can we use this somehow?
-
+    yes
 We need to provide all Excel- and PDF-Files for January and February from all departments:
     How can we do this?
-
+    echo */0[1-2]*/*.xlsx
     Can we use Globbing?
-
+    mkdir Export && cp */0[1-2]*/*.xlsx Export
     Copy those files in a folder named Export
+    cp */0[1-2]*/*.xlsx */0[1-2]*/*.pdf Export (or cp */0[1-2]*/*.{xlsx,pdf}  Export)
+
+============================================
+find program
+
 
