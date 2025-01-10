@@ -91,3 +91,31 @@ echo ./*
 difference between "rm *" and "rm ./*"
 rm * will remove all file including directories except -rf file, becuase the bash think its a command
 rm ./* will remove all of the files including -rf, except directories
+
+============================================
+
+unzip lib:
+sudo apt install unzip
+sudo dnf install unzip
+
+exercise CompanyShare
+tips:
+> can use custom ranges: forexample: [0-4] would match one charecter of the folowwing 0, 1, 2, 3, 4
+> can combine custom ranges with wildcards for example: A[0-4]* ===> filename needs to start with A followed by 0,1,2,3,4 and followed by zero to unlimited characters
+> can combine multiple patterns into a single "cp" command:
+    # cp [pattern1] [pattern2] [dest]
+    # cp */**/*.jpg */**/*.dng folder 
+
+questions:
+Take a look at the Folder- File-Structure
+    How are the Folder and Files named?
+
+    Can we use this somehow?
+
+We need to provide all Excel- and PDF-Files for January and February from all departments:
+    How can we do this?
+
+    Can we use Globbing?
+
+    Copy those files in a folder named Export
+
