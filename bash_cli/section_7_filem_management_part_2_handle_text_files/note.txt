@@ -36,3 +36,20 @@ how to read files:
     # use "q" to exit from file
 
 
+============================================
+
+how to get the size of a file
+
+> if we just cat a large file... the whole file will be printed in the terminal
+> this make quite long... cant we check of a file ahead of time?
+    # wc (word count) default program in unix, if dont have, install it
+        - example:
+            wc file.txt
+            wc -lwc file.txt
+                => this command prints aout the number of lines, words and bytes in the file
+            wc -l file.txt
+                => counts the number of lines
+            wc -w file.txt
+                => counts the number of words
+            wc -c file.txt
+                => counts the number of bytes (=8bit ASCII characters)
