@@ -51,7 +51,7 @@ why do we want to redirect stderr?
         echo "bash is amazing" > file.txt 2> error.txt
         echo "bash is amazing" >> file.txt 2>> error.txt
 
-    > or ignorring the error:
+    > or ignorring the error (want the standard error to be discarded):
         echo "bash is amazing" > file.txt 2> /dev/null
 
 
