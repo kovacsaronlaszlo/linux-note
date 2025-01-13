@@ -55,6 +55,7 @@ why do we want to redirect stderr?
         echo "bash is amazing" > file.txt 2> /dev/null
 
 ============================================
+
 can we redirect stderr to stdout?
 # it allows us to easily store both outputs in the same file
 # right now we would have to provide the filename multiple times:
@@ -66,3 +67,17 @@ can we redirect stderr to stdout?
         [command] > out.txt 2>&1 // same as we append out.txt like above
             - order is important, the "&1" means "> out.txt" in this case
         
+============================================
+
+redirect stdin
+# some program accept user input
+# example:
+    > wc -l // write something, than hit ctrl+d
+    > cat // same as above
+# also can use redirect ("<" uses standard input to a file):
+    > wc -l < out.txt
+    > cat < out.txt
+    > cat - < out.txt > other.txt // use instead cp command
+
+
+
