@@ -56,6 +56,8 @@ how to get the size of a file
 
     # du (disk usage)
         - it will calcuate the size of all items in the folder
+        - show the block size (kb)
+        - with the "-h" flag we can see the size of the file in MB
         - we can also specify the paramter "-s", to just get a summary
 
 
@@ -80,6 +82,11 @@ how to edit files
     # if the file is not created yet, the nano will do
 
 
+============================================
 
-
+Analyze a log file
+(check exercises folder)
+1. head -n 4 access.log or tail -n 4 access.log
+2. wc -l access.log
+3. du -h access.log
 
