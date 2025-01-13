@@ -53,3 +53,33 @@ how to get the size of a file
                 => counts the number of words
             wc -c file.txt
                 => counts the number of bytes (=8bit ASCII characters)
+
+    # du (disk usage)
+        - it will calcuate the size of all items in the folder
+        - we can also specify the paramter "-s", to just get a summary
+
+
+============================================
+
+how to edit files
+> there s no build-in text editor for bash
+> have to install aditional software for that
+> 4 quite popular options are:
+    # pico / nano: A simple editor for text files in bash
+    # vi / vim: a more advanced text editor
+> install process depends on the system you are using:
+    # mac:
+        brew install nano
+    # ubuntu:
+        apt-get update
+        apt-get install -y nano
+    # fedora
+        dnf update
+        dnf install -y nano
+> example: nano bash.txt 
+    # if the file is not created yet, the nano will do
+
+
+
+
+
