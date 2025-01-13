@@ -1,0 +1,19 @@
+how to read files:
+> cat
+    # allows to print the contents of the file
+    # example: 
+        cat data.txt
+        cat b*
+        cat img.jpeg - read binary data of image
+        ...etc.
+    # but not enough to display files
+
+> head
+    # show us the start of a (text) file
+    # we can specify the paramter -n for the number of lines (default is 10)
+    # example: head -n 5 data.txt
+
+> tail 
+    # read a file from the end
+    # same options as "head"
+    # example: tail -n 5 data.txt
