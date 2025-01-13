@@ -17,3 +17,22 @@ how to read files:
     # read a file from the end
     # same options as "head"
     # example: tail -n 5 data.txt
+
+
+============================================
+
+
+> less
+    # allows us to read large files
+    # we can use the arrow keys to navigate through the file
+    # can use f (forward) and b (backward) to navigate a whole page ahead or back
+    # can also navigate to a percentage of our content
+        - just enter 50p to navigate to 50% of our content
+    # can use the = to show info about our current position
+    # can alsu use the Option -N display row numbers
+    # find in file:
+        - forward search /<search_term>
+        - backward search: ?<search_term>
+    # use "q" to exit from file
+
+
