@@ -54,6 +54,15 @@ why do we want to redirect stderr?
     > or ignorring the error (want the standard error to be discarded):
         echo "bash is amazing" > file.txt 2> /dev/null
 
-
-
-
+============================================
+can we redirect stderr to stdout?
+# it allows us to easily store both outputs in the same file
+# right now we would have to provide the filename multiple times:
+    do -h file.txt file1.txt 1>> out.txt 2>> out.txt
+# only pipe stdout into the next command
+# how can we redirect stderr to stdout?
+    > &1 stands for: current stdout
+        [command] 2>&1
+        [command] > out.txt 2>&1 // same as we append out.txt like above
+            - order is important, the "&1" means "> out.txt" in this case
+        
