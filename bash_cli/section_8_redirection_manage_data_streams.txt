@@ -28,6 +28,31 @@ standard stream: stdin, stdout, stderr
         4.0K	file.txt // stdout
         du: cannot access 'file1.txt': No such file or directory // stderr
     
+============================================
+
+why do we want to redirect stderr?
+# sometimes we want to redirect the stderr
+# a programm my print errors, and we want to ignore them
+# we are only insterested in the errors and want to redirect them into a file (to have look at them at a later date)
+# but how we do that?
+    > so far, we have only redirect stdout (1):
+        - echo "bash is amazing" > file.txt
+        - echo "bash is amazing" >> file.txt
+
+    > however, there is also a move verbose way to do this:
+        - echo "bash is amazing" 1> file.txt
+        - echo "bash is amazing" 1>> file.txt
+
+    > can use this way to also redirect stderr (2):
+        - echo "bash is amazing" 2> error.txt
+        - echo "bash is amazing" 2>> error.txt
+    
+    > can also combine those:
+        echo "bash is amazing" > file.txt 2> error.txt
+        echo "bash is amazing" >> file.txt 2>> error.txt
+
+    > or ignorring the error:
+        echo "bash is amazing" > file.txt 2> /dev/null
 
 
 
