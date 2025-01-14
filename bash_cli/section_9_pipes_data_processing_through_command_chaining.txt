@@ -109,6 +109,29 @@ selective ectraction: cut
         - uptime | cut -d " " -f 1
             (in case the output starts witch a whitespace character -- then you would need to use -f 2)
 
+============================================
 
+the tool: sed
+
+# allows us to easily execute commands on a files or on stdin
+# example:
+    sed "command1; command2; ..."
+# those commands can modify the string, such as:
+    > delete lines
+    > insert lines
+    > replace lines (the most common use case for sed)
+        - s/[pattern]/[replacemnet]/[flag]
+            => replace a String with another
+            => most common flag is "g":
+                this means we want to replace all occurrences, not just the first
+    > example:
+        - echo "hello world" | sed "s/world/bash/g"
+# there is several different implementation of sed
+# OSX uses an implementation from FreeBDF from 2005
+# Linux usually uses GNU sed
+# so:
+    > most of the code works exactly the same on each platform
+    > however there might be some minor differences
+        (especially ehrn running complex sed commands)
 
 
