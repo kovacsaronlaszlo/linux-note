@@ -1,0 +1,6 @@
+how many requests have downloaded .zip files?
+grep -F ".zip" access.log | wc -l
+4061
+how many different -zip files have been downloaded?
+grep -F ".zip" access.log | cut -d " " -f 7 | sort | uniq | wc -l
+27
