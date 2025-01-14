@@ -6,5 +6,21 @@ what is a pipe ("|")?
         - ls | wc -l
         - ls | cat
         - du -h file1.txt file-not-exist.txt 2>&1 > /dev/null | wc -l
-        
+
 ============================================
+
+Dual output: the Utility "tee"
+commonly used tool: tee
+# with the combination of a pipe and the"tee" command you can create a standard output and write it to a file at the same time
+# example:
+    > echo "hello world" | tee hello.txt // create and add the "hello world" to the hello.txt, than write is out to the terminal
+    > to append the file: echo "hello world" | tee -a hello.txt
+    > other example:
+        - echo "hello world" | tee -a hello.txt | wc -c // print the number of characters of the file (which we add to the file)
+        - ping google.com 2>&1 | tee ping.txt // write the outputs of the ping into ping.txt
+
+
+
+
+
+

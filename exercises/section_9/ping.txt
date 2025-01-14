@@ -1,0 +1,6 @@
+PING google.com (142.250.180.238) 56(84) bytes of data.
+64 bytes from bud02s34-in-f14.1e100.net (142.250.180.238): icmp_seq=1 ttl=118 time=2.46 ms
+64 bytes from bud02s34-in-f14.1e100.net (142.250.180.238): icmp_seq=2 ttl=118 time=4.00 ms
+64 bytes from bud02s34-in-f14.1e100.net (142.250.180.238): icmp_seq=3 ttl=118 time=4.47 ms
+64 bytes from bud02s34-in-f14.1e100.net (142.250.180.238): icmp_seq=4 ttl=118 time=2.60 ms
+64 bytes from bud02s34-in-f14.1e100.net (142.250.180.238): icmp_seq=5 ttl=118 time=3.75 ms
