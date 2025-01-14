@@ -90,3 +90,25 @@ How to work with strings?
     > echo "was it a cat i saw?" | rev
 
 ============================================
+
+selective ectraction: cut
+# allows us to process and axtract data from a file or standard input
+# can use it for different modes:
+    > cutting by bytes:
+        - cut -b
+        - example: uptime | cut -b 1-10
+    > cut by characters:
+        -cut -c
+        - example:
+            uptime | cut -c 1-10
+            echo "höhö" | cut -c 1-2 
+                (not every character will be 1 byte, special characters cost more than 1 bytes like "ö")
+            echo "höhö" | cut -c 2-
+    > cutting by fields:
+        - cut -d " " -f 1
+        - uptime | cut -d " " -f 1
+            (in case the output starts witch a whitespace character -- then you would need to use -f 2)
+
+
+
+
