@@ -47,10 +47,30 @@ Commonly used tools: sort, uniq
         or 
         - cat users.txt | sort | uniq -d
 
+============================================
 
+Filter lines: grep
+# grep is a tool can find a pattern in an output or a file
+# basic usage
+    > grep -F "pattern" file.txt
+# can also wor on stdin
+    > <command> | grep -F 'pattern'
+# by default, grep uses "basic regular expressions"
 
+# grep and binary data
+    > grep works with every file - it will just find the pattern in the file
+    > thus, we could also execute grep on files that contain binary data
+    > but shouldn't:
+        - may find files we are not intending to find
+        - grep is mean to be used on text files, not on binary files
+        - especially when using regular expression, grep can be extremely slow on binary files
+        - binary files may contain non-printable characters, oe characters the change the behavior of our terminal once printed
 
-
+# example:
+    > ls | grep -F "file"
+    > print out ip config and use grep:
+        ip addr show | grep -F "inet"
+        ip addr show | grep -F "inet" | grep -F "<ip_address>"
 
 
 
