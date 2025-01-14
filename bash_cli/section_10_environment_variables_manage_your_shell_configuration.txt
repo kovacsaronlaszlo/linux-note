@@ -19,4 +19,6 @@ what is shell?
 # thus, "linux shell":
     > this usully only refers to the CLI / "terminal" / "console"
 
-
+# the linux shell:
+    > allows us to work on devices that dont support a graphical user interface (GUI)
+    > quite often, its more efficient to use the cli instead of the gui
