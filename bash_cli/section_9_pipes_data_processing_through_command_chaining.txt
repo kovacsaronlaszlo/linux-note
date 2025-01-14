@@ -1,0 +1,10 @@
+what is a pipe ("|")?
+# the pipe is  amechanism that passes the output of one command as input to another command
+# this, you can chain multiple commands together and build more compley functionalities
+    > general syntax: command | command | ... | command
+    > example:
+        - ls | wc -l
+        - ls | cat
+        - du -h file1.txt file-not-exist.txt 2>&1 > /dev/null | wc -l
+        
+============================================
