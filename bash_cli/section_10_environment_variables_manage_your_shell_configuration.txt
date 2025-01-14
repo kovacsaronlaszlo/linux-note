@@ -1,0 +1,22 @@
+shell environment is a collection if settings, variables, aliases and configurations
+it defines the context in which our programs are run
+it thus influences how our programs are being run
+
+
+what is shell?
+# outer layer if the operating system
+# it takes commands from the user and translates them into a form that the kernel can understand
+# it can also display the result of those commands to the user
+
+# in general:
+    > everything that allows th outer world to access the operating system
+    > the graphical user interface is always a shell
+
+# command line (shell)
+    > the term "shell" only refer to the command line interface (CLI) os an operating system
+    > CLI: a text-base interface that allows users to interact with system by typing commands
+
+# thus, "linux shell":
+    > this usully only refers to the CLI / "terminal" / "console"
+
+
