@@ -72,5 +72,21 @@ Filter lines: grep
         ip addr show | grep -F "inet"
         ip addr show | grep -F "inet" | grep -F "<ip_address>"
 
+============================================
 
+How to work with strings?
+# tr (translate)
+    > echo "bash" | tr "b" "d"
+    > conver upper and lower case:
+        - echo "bash" | tr "a-z" "A-Z"
+    > try this:
+        - echo "bash" | tr "a-z" "."
+        - echo "bash" | tr "a-z" "0-9"
+        - echo "bash" | tr "a-z" "0-9."
+    > delete characters:
+        - echo "bash is" | tr -d " "        
+        - echo "bash is" | tr -d "s"        
+# rev (reverse)
+    > echo "was it a cat i saw?" | rev
 
+============================================
