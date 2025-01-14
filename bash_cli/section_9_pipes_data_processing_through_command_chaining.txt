@@ -19,6 +19,36 @@ commonly used tool: tee
         - echo "hello world" | tee -a hello.txt | wc -c // print the number of characters of the file (which we add to the file)
         - ping google.com 2>&1 | tee ping.txt // write the outputs of the ping into ping.txt
 
+============================================
+
+Commonly used tools: sort, uniq
+# sort
+    > sort the contents in a file or stdin
+        - by default alphabetical order
+        - sort -r: sort in reverse alphabetical order
+        - sort -n: sort numbers according to numerical order
+        - sort -c: check whether the contents in a file are sorted and find unsorted elements
+        - sort -k <column_number> (starting at 1): sort data by a specific solumn
+    > example:
+        - cat users.txt | sort
+        - cat users.txt | sort -r
+        - cat users.txt | sort -k 2
+
+# uniq
+    > remove duplicate lines: 
+        - sort users.txt | uniq
+        - first have to sort the list, than use the uniq command
+    > there is a sorter way:
+        - sort -u users.txt
+        or
+        - cat users.txt | sort -u
+    > find the duplicate lines in a file:
+        - sort users.txt | uniq -d
+        or 
+        - cat users.txt | sort | uniq -d
+
+
+
 
 
 
