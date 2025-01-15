@@ -56,6 +56,9 @@ HOME, PWD, USER
     > not to be confused with the command "pwd"!
     > to navigate back the previous directory: cd "${OLDPWD}"
 
+# USER:
+    > stores the current users username
+
 
 
 
