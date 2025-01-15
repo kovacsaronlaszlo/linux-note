@@ -42,5 +42,22 @@ using environment variables
 # avoid this:
     - echo $PATH
 
+============================================
+
+Important environment variables:
+HOME, PWD, USER
+
+# HOME:
+    > stores current users home directory path
+
+# PWD:
+    > stores the current working dorectory path
+    > for the last directory befor: OLDPWD
+    > not to be confused with the command "pwd"!
+    > to navigate back the previous directory: cd "${OLDPWD}"
+
+
+
+
 
 
