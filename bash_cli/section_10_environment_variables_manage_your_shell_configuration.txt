@@ -72,8 +72,17 @@ how to set/unset environment variables
     > unset VAR
     > this is useful for troublechooting and cleaning up of the env
 
+============================================
 
-
+PATH env variable
+# one of the most important
+    > stores a list of directories
+    > directories searched for executable programs
+    > order matters: directories search from left to right
+    > multiple directories separated by colons (":")
+    > exmaple:
+	/home/kovacsaron/.bun/bin:/home/kovacsaron/.nvm/versions/node/v18.20.5/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+    > /usr/bin/cat file.txt
 
 
 
