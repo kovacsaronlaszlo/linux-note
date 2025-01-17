@@ -59,6 +59,28 @@ HOME, PWD, USER
 # USER:
     > stores the current users username
 
+============================================
+
+how to set/unset environment variables
+# we can use the esport command to create an environment variable:
+    > export VAR=value
+    > ' means rewrite env variable
+# can also overwrite existing variable
+    > VAR=new-value
+
+# delete an env varaible
+    > unset VAR
+    > this is useful for troublechooting and cleaning up of the env
+
+
+
+
+
+
+
+
+
+
 
 
 
