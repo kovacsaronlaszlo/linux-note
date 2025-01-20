@@ -125,8 +125,12 @@ PATH: best practices:
 # regularly review and clean up the PATH
 # be cautios when modifying the PATH for system-wide changes
 
+============================================
 
-
+make file executable: chmod +x [my_program]
+in this case dont have to use pyrhon to run if the first line looks like this:
+	#!/usr/bin/env python3
+becasue before run the program the system will use pythone3 to run the program, or can be called shebang
 
 
  
