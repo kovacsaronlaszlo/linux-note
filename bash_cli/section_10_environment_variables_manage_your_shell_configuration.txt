@@ -102,9 +102,28 @@ why we need different paths?
 
 ============================================
 
+modifying the PATH variable
+# why?
+    > we have a separate directory in which we want to install executable files on out system
+# usually, want to append a directory to our PATH
+    > PATH="${PATH}:/new/path"
 
+troubleshooting PATH issues
+# common issues: "command not found"
+    > in that case, we need to verify the contents of the variable PATH
+    > echo "${PATH}"
+    > desired directory should be included
+    > order of the entries in PATH must be correct
+    > if we need to find a program:
+	"which" command (program)
 
-
+PATH: best practices:
+# keep system dorectories at the beginning
+# place user-specific directories after system directories
+# avoid unnecessary duplication of directories
+# minimze the number of directories to improve wearch efficiency
+# regularly review and clean up the PATH
+# be cautios when modifying the PATH for system-wide changes
 
 
 
