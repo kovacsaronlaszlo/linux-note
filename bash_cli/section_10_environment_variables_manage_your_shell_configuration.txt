@@ -84,7 +84,33 @@ PATH env variable
 	/home/kovacsaron/.bun/bin:/home/kovacsaron/.nvm/versions/node/v18.20.5/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
     > /usr/bin/cat file.txt
 
+============================================
 
+why we need different paths?
+# important definitions:
+    > filesystem hierarchy standard: unified standard of where to place files
+    > single-user mode: a special way to launch Linux for repairing a broken system - we need access to essential tools
+# different paths
+    > /bin: essential binaries, that need to be always available
+    > /sbin: essential binaries, that are usually executed as rppt, and need to be always available
+    > /usr/bin: non-essential binaries, for all useres. could be shared with other computers
+    > /usr/sbin: non-essential binaries, usually executed as root. could be shared with other computers
+    > /usr/local/bin: non-essential binaries, for all users. specific to his host
+    > /usr/local/sbin: non-essential binaries, usually executed as root. specific to this host
+#exmaple:
+    cat file.txt === /usr/bin/cat file.txt === /bin/cat file.txt
+
+============================================
+
+
+
+
+
+
+
+
+
+ 
 
 
 
