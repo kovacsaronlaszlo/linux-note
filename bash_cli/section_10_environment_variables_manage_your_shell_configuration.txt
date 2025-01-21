@@ -153,10 +153,13 @@ utilizing environment variables for data transfer into prgrams
 	print(os.environ)
     > to override an env varaible for a specific program, but dont want to change it globaly:
 	LOGIN_CONFIG='localhost:3306' python3 env.py
-
 	
+============================================
 
-
+the environment varaible: SHELL
+# stores the path to the user's default shell
+# it is inherinted just as a normal environment variable
+# can be changed the shell env, soo not just use bash but others
 
 
 
