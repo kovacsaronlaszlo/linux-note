@@ -132,8 +132,35 @@ in this case dont have to use pyrhon to run if the first line looks like this:
 	#!/usr/bin/env python3
 becasue before run the program the system will use pythone3 to run the program, or can be called shebang
 
+============================================
 
- 
+utilizing environment variables for data transfer into prgrams
+# env variables:
+    > env variables are not a Bash feature
+    > a feature provided by operating system
+    > using export keyword to define a new env varaiable
+	example: export LOGIN_CONFIG='secret'
+    > this will help us understand why they work seamlessly across programs and why they can "cross" those boundaries
+
+# example: available to python
+    > env variables are automatically available for all programs that we launch
+    > can access them, also in other applications
+    > env varaible are often used to pass configuration data to programs
+    > such as key, URLs and even passwords
+    > if you run your own application, you might also consider passing in the configuration as env variable
+    > example python:
+	import os
+	print(os.environ)
+    > to override an env varaible for a specific program, but dont want to change it globaly:
+	LOGIN_CONFIG='localhost:3306' python3 env.py
+
+	
+
+
+
+
+
+
 
 
 
