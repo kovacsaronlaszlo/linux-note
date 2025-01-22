@@ -160,7 +160,8 @@ the environment varaible: SHELL
 # stores the path to the user's default shell
 # it is inherinted just as a normal environment variable
 # can be changed the shell env, soo not just use bash but others
-
+	'chsh -s /bin/zsh'
+	'chsh -s /bin/bash'
 ============================================
 
 how can we store our configuration?
@@ -206,7 +207,7 @@ bash startup files
 # note
     > on MAC, all interactive shells load the files for the lofin-shell
 
-
+============================================
 
 
 
