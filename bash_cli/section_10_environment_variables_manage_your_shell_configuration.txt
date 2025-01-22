@@ -209,9 +209,39 @@ bash startup files
 
 ============================================
 
+editing bash startup files with the command-line-editor: nano
+open .bashrc file and put this the end of this file
+nano ~/.bashrc
+# our own code
+export TOP_SECRET_TOKEN='top-secret!!!'
+
+if you trying to access this token after you saved and exit the nano, like:
+echo "${TOP_SECRET_TOKEN}"
+
+nothing will be shown!
+this only be executed whenever a new shell is being started
+so if we start a new bash, this env variable would be set, because now this configuration file has been executed
+$ bash
+$ echo "${TOP_SECRET_TOKEN}"
+$ top-secret!!!
+but if we exit the inner bash
+$ exit
+the echo "${TOP_SECRET_TOKEN}" command wont set
 
 
+we can add access to a bin file we just create in the user like this:
+$ mkdir bin
+open the .bashrc
+$ nano ~/.bashrc
+roll the bottom of the file and give this command:
+...
+# our own code
+export TOP_SECRET_TOKEN='top-secret!!!'
+PATH="${PATH}:/home/<your_user>/bin"
 
+this is how can we edit our configuration file
+
+============================================
 
 
 
