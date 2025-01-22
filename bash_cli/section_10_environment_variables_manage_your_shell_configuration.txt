@@ -161,6 +161,59 @@ the environment varaible: SHELL
 # it is inherinted just as a normal environment variable
 # can be changed the shell env, soo not just use bash but others
 
+============================================
+
+how can we store our configuration?
+# there are amyn different startup files for bash
+    > ~/.bash_profile
+    > ~/.bash_login
+    > ~/.profile
+    > ~/.bashrc
+
+	which of those should we put our configuration?
+
+Bash startup mode
+# bash can start in various different startup modes:
+    > interactive login shell
+	- directly log into a computer
+	- tty-terminal on my machine / ssh on remote machine
+	- switch to tty:
+	     @ ctrl+F1 - login screen
+	     @ ctrl+F3 - tty interface (the real login in shell)
+    > interactive non-login shell:
+	- open a terminal on desktop env, or we use "bash" within an existing terminal
+    > non-interactive non-login shell:
+	- run a ".sh" file, example: "./script.sh"
+    > non-interactive login shell
+	- very rare. on way would be, if we send a command with ssh to a remote server without starting a shell
+	- echo 'command' | ssh server
+
+bash startup files
+# interactive login shell
+    > /etc/profile
+    > first one of:
+	- ~/.bash_profile
+	- ~/.bash_login
+	- ~/.profile
+
+# interactive non-login shell
+    > ~/.bashrc
+
+# non-interactive shells (login & non.login)
+    > bash looks for an environment varaible BASH_ENV
+    > if found, will try to execute this file
+
+# note
+    > on MAC, all interactive shells load the files for the lofin-shell
+
+
+
+
+
+
+
+
+
 
 
 
