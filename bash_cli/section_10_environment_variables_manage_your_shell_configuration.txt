@@ -264,6 +264,26 @@ exmaple:
 
 (make a file executable: chmod +x executable.sh)
 
+============================================
+
+configure the shell with 'set' command
+# one way to change the behavior of the shell is the set command
+# it provides pre-defined configuration options that we can use
+# to enable the feature:
+	set -[feature]
+# to disable the feature
+	set +[feature]
+# what feature can we enbale / disable?
+	set -x:
+	 a) xtrace: enbaled that each command that the shell executes will be printed
+	 b) allows us to debug the commands
+	there is way more:
+		https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html
+	other example:
+		set -t; echo 'hello' > file.txt (-t exit after reading and executing one command)
+
+============================================
+		
 
 
 
