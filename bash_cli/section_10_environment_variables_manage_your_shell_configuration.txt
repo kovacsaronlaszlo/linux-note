@@ -243,6 +243,37 @@ this is how can we edit our configuration file
 
 ============================================
 
+createing aliases with the 'alias' command
+exmaple:
+    > alias gohome='cd ~'  <=== gohome is a new command
+
+# we can list existing aliases with the following command:
+	alias
+# we can remove an alias as well:
+	unalias gohome
+# important!
+	> an alias is only valud within a current session
+	> we can add it to a startup file, so it is loaded every time we start our shell
+		$ nano ~/.bashrc
+		add the line belove:
+		alias gohome='cd ~'
+		
+	> other example:
+		alias gitc='git checkout'
+		alias ls='ls --color'
+
+(make a file executable: chmod +x executable.sh)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
