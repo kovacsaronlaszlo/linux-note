@@ -284,6 +284,34 @@ configure the shell with 'set' command
 
 ============================================
 		
+configure the shell: shopt
+# can be configured how the shell is behaving in certain scenarios through the 'shopt' built-in
+# enable a configuration option:
+	> shopt -s [optname]
+# disable a configuration option
+	> shopt -u [optname]
+
+# but why do we need set and shopt?
+	> set: configuration options that are inherited from 'sh'
+	> shopt: configuration options that are specific to Bash
+# exmaple:
+	> autocd:
+		- allows us to change into another directory without the 'cd' command
+		- exmaple:
+			$ Desktop
+			$ Desktop: command not found...
+			$ cd Desktop
+			$ cd ..
+			$ shopt -s autocd
+			$ Desktop
+
+	> cdspell:
+		- if a minor spelling error occurs for the 'cd' command - still naviaget into the folder
+		- example:
+			$ cd Desctop
+			$ Dectop: No such file or directory
+			$ shopt -s cdspell
+			$ cd Desctop
 
 
 
