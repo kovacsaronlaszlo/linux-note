@@ -63,7 +63,14 @@ Terminal escape sequences
 # to reset everything:
 	$ echo -e "\e(B\e[m"
 
+============================================
 
+Bash: Command Substition 
+# can collect the output of a program and use it:
+	$ echo "this is the output:\n$(ls)"
+	> what does this line do?
+		- $(ls):
+			-- executes the command "ls", and collects the output
 
 
 
