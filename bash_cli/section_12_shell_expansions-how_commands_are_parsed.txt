@@ -17,7 +17,17 @@ Filename expansion
 
 ============================================
 
-
+Tilde expansion
+# tilde expansion:
+	> ls ~
+	> this list our home folder
+	> by the "~" character, we're using the tilde expansion
+	> this character is being expanded to the value of the environment variable HOME
+	> test this:
+		$ echo ~
+	> we could also use it with a plus:
+		~+: expands to $PWD
+		$ echo ~+
 
 
 
