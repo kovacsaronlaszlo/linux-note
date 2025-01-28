@@ -1,0 +1,43 @@
+customizing shell prompt: PS1
+# PS1 environment varible:
+	> stands for 'Prompt String 1'
+	> defines the appearance of the primary shell prompt
+	> highly customizable with escape sequences and special characters
+	> enhances user expresiences and workflow when we changes PS1
+# lets have a look at what happens when we changes PS1
+	& PS1='hello-bash'
+	hello-bash
+	hello-bashpwd
+	/home/user/Desktop
+	hello-bash
+# PS1 supports various placeholders:
+	> Username: \u
+	> Hostname: 
+		- Up to first '.': \h
+		- The complete hostname: \H
+	> Current working directory:
+		- \w (full path)
+		- \W (last directory of the full path)
+	> Time in 24-hour format: \t
+	> Time in 12-hour format (with am / pm): \@
+# example: 
+	> PS1='\u@\h:\w$ '
+# to set this variable override .bashrc file and copy the code above, than reboot the computer
+
+============================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
