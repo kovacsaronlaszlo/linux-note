@@ -72,6 +72,39 @@ Bash: Command Substition
 		- $(ls):
 			-- executes the command "ls", and collects the output
 
+============================================
+
+Streamlining Terminal Control: the program "tput"
+tput & escape sequeces
+# we can use it tput generate escape sequences:
+	$ tput clear: CLear the reminal
+	$ tput cup 5 20:
+		-- moves the cursor to position 5 (vertical) and 20 horisontal
+	$ tput bold: start bold font
+	$ tput sgr0:
+		-- rest our font / terminal configuration
+	$ tput smul/tput rmul:
+		-- start / end underlined text
+	$ tput setaf [color]
+		-- set foreground color
+	$ tput setab [color]
+		-- set background color
+		(to check the color run this command: for i in {0..15}; do echo "(tput setab ${i}) color: ${i}${tput sgr0}"; done)
+# we can also use it to query the terminal:
+	> tput colors
+	> tput cols
+	> tput lines
+
+
+
+
+
+
+
+
+
+
+
 
 
 
