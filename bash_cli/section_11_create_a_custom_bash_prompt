@@ -26,6 +26,32 @@ customizing shell prompt: PS1
 
 ============================================
 
+Terminal Color control
+# terminal hace different abilities
+# can tell bash wich abilities should be used by the env varaible:
+	> TERM
+	$ echo "${TERM}"
+	$ xterm-256color
+# there are different terminals available:
+	> text-only terminals (no colors)
+	> terminals, that support 16 different colors
+	> terminals, that support 256 different colors (xterm-256color)
+# can list the available modes:
+	> toe
+	$ toe -a
+
+# terminal excape sequences
+	> in order to control this terminal, we can send "escape sequences":
+		- echo -e "\e[30;40m":
+			-- 30: Black foreground
+			-- 40: Black background
+			-- -e is the excape character
+		- echo -e "\e[36;41m":
+			-- 36: cyan foreground
+			-- 41: red background
+	> look into: VGA colors!
+
+
 
 
 
