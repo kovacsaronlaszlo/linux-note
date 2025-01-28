@@ -1,0 +1,37 @@
+Filename expansion
+# shell expansion:
+	> before executing, the shell "rewrites" and parses the command
+	> this happens before the command is being executed
+
+# filename expansion	
+	> ls *
+	> in this case, the * is being "expanded"
+	> for the asterisk, this mean Bash gets the contents of the current directory
+	> and passes those items as paramteres to the "ls" command
+	> this command print the content of our current folder:
+		echo *
+	> we can also filter the files that Bash should find for us:
+		example:
+			- echo *.txt (filter multiple character end with .txt)
+			- echo ?.txt (filter one character end with .txt)
+
+============================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
