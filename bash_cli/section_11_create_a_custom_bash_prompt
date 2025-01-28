@@ -89,12 +89,27 @@ tput & escape sequeces
 		-- set foreground color
 	$ tput setab [color]
 		-- set background color
-		(to check the color run this command: for i in {0..15}; do echo "(tput setab ${i}) color: ${i}${tput sgr0}"; done)
+		(to check the color run this command:
+			 for i in {0..15}; do echo "(tput setab ${i}) color: ${i}${tput sgr0}"; done
+		)
 # we can also use it to query the terminal:
 	> tput colors
 	> tput cols
 	> tput lines
 
+============================================
+
+The problem: Escape sequence & PS1
+# the problem:
+	> the bash needs to know how long our PS1 prompt is
+	> this is being calculated automatically
+	> BUT:
+		- escape sequences also count as characters
+		- this can lead to issues, especially with multi-line commands
+	> the solution:
+		- we need to wrap all excape sequences into the following code:
+			-- \[ ... \]
+		- then they wont be counted as normal characters
 
 
 
