@@ -51,6 +51,18 @@ Terminal Color control
 			-- 41: red background
 	> look into: VGA colors!
 
+============================================
+
+Terminal capabilities
+Terminal escape sequences
+# we can list ht eterminal capabilities with:
+	> infocmp
+# we then get a list of supported escape sequences
+# create bold text:
+	$ echo -e "\e[1mboldtext"
+# to reset everything:
+	$ echo -e "\e(B\e[m"
+
 
 
 
