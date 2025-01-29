@@ -58,6 +58,38 @@ Shell parameter expansion:
 # replace sunstring (all occurences):
 	$ ${HOME//pattern/replacement} 
 
+============================================
+
+Word splitting
+# bash performs word splitting on out input
+# this happens, after our command has been (potentially) rewritten by expansions
+# example:
+	> touch a.txt b.txt
+	> this command will be slitted into 3 different words:
+		- touch
+		- a.txt
+		- b.txt
+	> the first entry will then be the program (touch)
+	> a.txt the first parameter / argument
+	> b.txt will be the second paramter / argument
+# word splitting will occur at any character that is listed in the varaible IFS
+# by default, this is at very space, every tab, and every newline
+# sequences of IFS characters are treated as a single delimeter
+# tus, this would be equivalent:
+	> touch a.txt b.txt
+	> touch a.txt		b.txt
+# we can disable word splittin by wrapping parts of the command into quotes:
+	> touch 'a file.txt'
+	> touch "a file.txt"
+	> without word splitting:
+		- 2 files would have been created ('a' and 'file.txt')
+	> word splitting is disabled for character between those quotes
+
+
+
+
+
+
 
 
 
