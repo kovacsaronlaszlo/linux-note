@@ -29,8 +29,34 @@ Tilde expansion
 		~+: expands to $PWD
 		$ echo ~+
 
+============================================
 
+Variable and Parameter extension '${...}'
+Variable expansion:
+# the varaible expansion allows us to access a varaible:
+	> possible ways to write it:
+		$ echo $HOME
+		$ echo ${HOME}
+		$ echo "$HOME"
+		$ echo "${HOME}"
+	> Bash rewrites the command for us, and fills in the varaible
+	> We should prefer to use double quotes around it
+	> We should try use curly braces to make it clear where the variable end:
+		$ echo "${HOME}path"
+		$ echo "$HOMEpath" (something different)
 
+Shell parameter expansion:
+# shell paramter expansion allows us to work with strings
+# however, we need to have a varaible first!
+
+# query the lenght of string:
+	$ ${#HOME}
+# cut out a substring (substring extraction):
+	$ ${#HOME:start:length}
+# replace sunstring (one time):
+	$ ${HOME/pattern/replacement}
+# replace sunstring (all occurences):
+	$ ${HOME//pattern/replacement} 
 
 
 
