@@ -222,15 +222,18 @@ the Command Subtitution '$(...)'
 
 ============================================
 
+dynamic input & output: process substitution with '<(...)' & '>(...)'
+# process substitution allows us to use the input or the output of a 
+#	process as a temporary file
+# to use the output of a process as a temporary file
+	> <(command)
+	> example (will print out the filename)
+		$ echo <(ls)
+	> we can also use it in the following way
+	  (and combin it with a redirect)
+		$ wc -l < <(ls) (=== ls | wc -l)
 
-
-
-
-
-
-
-
-
-
-
-
+# to use a temporary file as the input to a command:
+	> >(command)
+	> exmaple (combined with a redirect):
+		$ echo "test" > >(cat)
