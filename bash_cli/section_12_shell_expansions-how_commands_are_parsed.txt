@@ -204,6 +204,29 @@ the Brace expansion '{...}'
 
 ============================================
 
+the Command Subtitution '$(...)'
+# we can also execute a command and use the output as a replacement
+# for this, we can use command substitution: $(...)
+# example:
+	$ echo "$(cat file.txt)"
+	> its best to still have double quotes around it, to disable word splitting
+	
+# this will execute the command in a subshell env and collect the output
+	(subshell = new bash process)
+# sometimes this can be useful:
+	$ echo 'the size of my hoem directory is: '"$(du -sh ~)"
+	$ echo 'there'"'"'re '"$(ls | wc -l)"' files in the current directory'
+# another way to write it are the backticks:
+	$ echo "`cat file.txt`"
+	> though this is considered less readable.
+
+============================================
+
+
+
+
+
+
 
 
 
