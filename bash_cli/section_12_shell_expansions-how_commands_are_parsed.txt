@@ -188,10 +188,21 @@ Escaping: the backslash character '\'
 	> instead, this command is not yet finished, 
 	  as the last single quote has not yet been terminated
 
+============================================
+the Brace expansion '{...}'
+# as of bash 4, it is possible to automatically expand string of characters
+	> {item1,item2}
+		$ echo data.{csv.txt} -> data.csv data.txt
+	> {start..end}
+		$ echo {A..Z}
+		$ echo {a..z}
+		$ touch {a..z}.txt
+	> brace expansion DOES NOT work within quotes
+	  (neither double nor single quotes)
+	> BUT of course, this would work:
+		$ echo 'test'{.txt,.csv}
 
-
-
-
+============================================
 
 
 
