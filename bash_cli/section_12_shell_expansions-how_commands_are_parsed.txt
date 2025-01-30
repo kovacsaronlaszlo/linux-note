@@ -165,6 +165,28 @@ Best pratice:
 
 ============================================
 
+Escaping: the backslash character '\'
+# sometimes we want to disabled Bash from performing the default actions
+# example:
+	> we autocompleta a filename that contains a whitespace character
+	> bash might autocomplate it to:
+		$ cat a\ file.txt
+# what does the backslash (\) do?
+	> it disabled the normal behavior of the next charater
+	> here, that would be word splitting
+	> thus, 'a file.txt' is the filename, that will be passed as an argumanet
+	  to cat (instead of 2 arguments: a and file.txt)
+# excaping would also allow us to print a single double quote in the following way:
+	$ echo "\""
+	> though I would prefer to write it in this way: $ echo '"'
+# but!
+	> escaping is also a feature that "rewrites" / expands our command as well
+	> the single quotes disable all "rewrites" / expansions
+	> thus, also tha backlash is disabled
+# thus, this one does not print aout a single single quote:
+	$ echo '\''
+	> instead, this command is not yet finished, 
+	  as the last single quote has not yet been terminated
 
 
 
