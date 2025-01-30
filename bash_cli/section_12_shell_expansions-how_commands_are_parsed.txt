@@ -85,6 +85,33 @@ Word splitting
 		- 2 files would have been created ('a' and 'file.txt')
 	> word splitting is disabled for character between those quotes
 
+============================================
+
+No Quotes vs, Single Quotes '...' vs. Double Quotes
+what do the quotes do?
+# whats the difference between the following commands?
+	$ echo $PWD/*.txt
+	$ echo '$PWD/*.txt'
+	$ echo "$PWD/*.txt"
+# no quotes:
+	> all valiable shell expansion are being applied
+# single quotes:
+	> all expansion are disabled, word splitting is disabled
+# double quotes:
+	> disabled most expansion, such as 
+		tilde expansion (~), 
+		filename expansion (*), 
+		word splitting...
+	> however certain expansion are still enabled:
+		Varaible and paramter expansion are still working
+# the quotes only define how bash will expand / split the command
+# this would be a completly valid bash command:
+	$ echo 'hello'"world"
+# or this:
+	$ 'echo' 'hello world'
+# but this wont:
+	$ 'echo hello'
+
 
 
 
