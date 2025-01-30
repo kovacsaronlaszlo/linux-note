@@ -112,10 +112,58 @@ what do the quotes do?
 # but this wont:
 	$ 'echo hello'
 
+============================================
 
+Common pitfall in shell expansions
+# be careful:
+	> the process is always the same:
+		1. first, the command is being expanded
+		2. then, word splitting is applied
+		3. quotes are being removed
+		4. command is being executed
+	> this also applied to the program name that we want to execute!
+# example:
+	> lets say we got a folder and the filename of the forst file was echo
+	> then this would be a valid command:
+		- *
+		$ ls
+		a.txt b.txt ...
+		$ touch echo
+		$ ls
+		a.txt b.txt echo c.txt ...
+		$ echo *
+		a.txt b.txt echo c.txt ...
+		$ *
+		a.txt: command not found
+		$ rm a.txt b.txt
+		$ ls
+		echo c.txt ...
+		$ *
+		c.txt ...
 
+# should use doucle quotes around varaibles
+# otherwise, word splitting will occure
+# try this is  apath that contains a space:
+	$ touch $PWD/file.txt
+	$ touch "${PWD}/file.txt"
 
+Best pratice:
+# try to refer to filenames in the same directory as ./file.txt
+# and, for the quotes:
+	> always use the quoting style that is as restrictive as possible
+	> thus:
+		- prefer single quotes: 'hello world'
+		- if this is not possible, use double quotes:
+			$ echo "hello ${USER}"
+			$ echo 'hello '"${USER}"
+	> use no quoting only if there's no ambiguity, 
+	  or you want all expansion to be applied:
+		- exmaple for no ambiguity:
+			$ ls -l (would be annoying 'ls' '-la')
+	> here we wanr all expansions:
+		$ echo ./*.txt
 
+============================================
 
 
 
