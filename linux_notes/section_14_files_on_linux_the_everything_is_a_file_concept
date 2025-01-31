@@ -1,0 +1,20 @@
+files on Unix
+# in this chapter:
+	> will have a look at the folder structure on Linux systems
+	> will have a look at what a file is:
+		- this sounds simple, but there're spacial kind of files
+		- as an example:
+			-- symlinks (symbolic links)
+			-- files taht reresent devices
+# important:
+	> understanding of how the files are organized
+	> to understand symbolic links and their implications
+	> will also investigate potentioal problems:
+		- our drive might be "full" even though enough disk space is available
+		  (inode limit)
+
+===================================
+
+
+
+
