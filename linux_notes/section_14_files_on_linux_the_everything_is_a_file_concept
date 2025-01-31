@@ -15,6 +15,66 @@ files on Unix
 
 ===================================
 
+What files in Unix systems
+# what is a file?
+	> a cointaner for storing, accessind and/or managing data
+	> typically associated with a unique identifier or filename
+	> this name, combined with its path, provides a unique location for 
+	  each file in a system.
+# files can have various attributes (stored in inode):
+	> size: the amount of data stored in the file
+	> permission: who can read, write, or execute the file
+	> ownership: which user and group owns the file
+	> timestamps: when the file was created, last accessed, or modified
+
+How is the data stored?
++-------------+		+------------------------+	 +--------------+
+|  file.txt   |========>| Inode: Stores Metadata |	 |		|
++-------------+		|			 |	 | Data on Disk |
+			| File type		 |======>|   (usually)  |
+			| Acces rights		 |	 |		|
+			| Number of hardlinks	 |	 +--------------+
+			| File size		 |
+			| Last modified data	 |
+			| Last acces date	 |
+			| Where is the data	 |
+			|  physically stored?	 |
+			| ...			 |
+			+------------------------+
+
+How does a folder work?
++-----------+	+------------------------+	+-----------+
+|  folder   |==>| Inode: Stores Metadata |	| file.txt  |
++-----------+	|			 |	|	    |
+		| Access rights		 |=====>|	    |
+		| Permission		 |	|	    |
+		| Where is the data	 |	+-----------+
+		|  physically stored?	 |
+		| ...			 |
+		+------------------------+
+files allow us to struture the data
+
+# files on Unix systems:
+	> in linux and unix-like systems, (alomst) everything is considered a file
+	> this is part of the unix philosophy
+	> example:
+		- ordinary file (-)
+		- directories (d)
+		- symbolic links (l)
+		- character device (c)
+		- block device (b)
+		- named pipes (p)
+		- sockets (s)
+	> we can show the type of a file with the ls command:
+		- ls -l [folder / file]
+		- the type then shows up as the first character of the file columns:
+			$ -rw-rw-r-- 1 [user] [user] 9019 Apr 29 11:46 document.odt
+
+===================================
+
+
+
+
 
 
 
