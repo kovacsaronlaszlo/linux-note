@@ -72,6 +72,50 @@ files allow us to struture the data
 
 ===================================
 
+what is a symlink?
+# a symlink (symbolic link) is a special kind of file on Unix systems
+# purpose:
+	> it serves as a reference to another file or directory
+	> its a spacial way of shortcut" to another destination
+# the idea:
+	> we create a special file, that contains a reference to the destination path
+	> this reference is being resolved on access of the symlink 
+	  (or a file within it)
+# how to create a symlink?
+	> we can use the "ln -s" command for this
+	> "ln" is a tool to make links between files
+	> we can use it to create symlinks
+	> example:
+		-- ls -l target link
+		$ ls
+		$ ln -s Desktop/ abc
+		$ ls
+		... abc ...
+		$ cd abs
+		// list files/folders which are on Desktop
+# how do we see if a file is a symlink
+	> we can use the "ls" command:
+		$ ls -l
+		- if the first character is an "l", this is a symlink:
+			lrwxwrwxrwx
+	> other exaple:
+		$ ln -s download.zip down.zip
+		or
+		$ ln -s /media/<user>/<sdcard>/document sd
+		  (
+		   made a symlink using an sd card, if you remove the sd card
+		   the link will be broken
+		  )
+
+
+
+
+
+
+
+
+
+
 
 
 
