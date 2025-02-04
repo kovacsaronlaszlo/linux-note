@@ -107,6 +107,67 @@ what is a symlink?
 		   the link will be broken
 		  )
 
+===================================
+
+what is a hard link?
++-------------+         +------------------------+       +--------------+
+|  file.txt   |========>| Inode: Stores Metadata |       |              |
++-------------+         |                        |       | Data on Disk |
+| hardlink.txt|========>| File type              |======>|   (usually)  |
++-------------+         | Acces rights           |       |              |
+                        | Number of hardlinks    |       +--------------+
+                        | File size              |
+                        | Last modified data     |
+                        | Last acces date        |
+                        | Where is the data      |
+                        |  physically stored?    |
+                        | ...                    |
+                        +------------------------+
+# a hardlink is adirectory entry or reference to an existing inode
+# technically, the first finelname of a file is already a hardlink
+# but one file can have multiple hardlinks
+# thus:
+	> hardlinks behave as if they were the same file
+	> a hardlink can only link to files on the same filesystem
+	> the filesystem must support additional hardlinks
+# if delete a hardlink:
+	> the other filenames /hardlinks remain intact
+	> the data is only deleted if all hardlinks are removed
+# how can we create a hardlink?
+	> use the "ln" command (without th "-s")
+	> ln target hardlink
+# important hardlink cannot be created for directories (to prevent loops)
+# create a hardlink:
+	$ touch file.txt
+	$ nano file.txt
+	// add content
+	$ ls
+	... file.txt ...
+	$ ln file.txt Desktop/message.txt
+	$ nano Desktop/message.txt
+	// append something and save
+	$ cat file.txt
+	// file.txt contant is the same as message.txt
+
+# good for complex folder structures
+	> example:
+	$ mkdir Desktop/02/04; mv Dekstop/message.txt Desktop/02/04
+	$ mkdir bookkeeping; mv file.txt bookkeeping
+
+# copy files woth hard link
+	> copy whole folder structure with hard links:
+		-- cp -al source dest
+		-- this will copy th whole source folder, and create hard links for al files!!!
+		-- we will not need any additional storage for this
+		-- we can now organize the files in multiple different folder
+		   structures, without needing any additional disk space
+
+	> example
+		$ cp -al Desktop/ restructured
+		$ cd ~
+		$ ls 
+		... restructured ...
+
 
 
 
