@@ -237,6 +237,27 @@ what kind of device does Unix support?
 	> those are devices that dont necessarily refer to a physical device
 	> depending on the type, they may show up as a block device or a character device
 
+===================================
+important pseudo devices
+# /dev/null
+	> when reading: return EOF (end of file)
+	> when writing: discard the information
+# /dev/random
+	> produce a stream of random numbers
+	> onyl produces random data, as long as enough
+	  "envorinment noise" is avialable
+# /dev/urandom
+	> just as /dev/randum BUT!
+	> always produces data, and may reuse already used "environmental noise"
+# /dev/stdin, /dev/stdout, /dev/stderr
+	> facialitates input /output / errors for normal Unix programs
+
+
+
+
+
+
+
 
 
 
