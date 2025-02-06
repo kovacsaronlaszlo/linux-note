@@ -273,6 +273,37 @@ important /proc files (procfs)
 		  number of currently running process / and number of threads, and
 		  the last PID
 
+===================================
+
+filesystem hierarchy standard
+# definition:
+	> the filesystem hierarchy standard (fhs) defines the directory
+	  structure directory contents in Unix-like operating systems
+	> it provides a consistent and predictable location for specific
+	  types of files and directories
+# purpose:
+	> ensure compatibility across different distributions
+	> makes it easier for users, administrations, and developers to locate files
+
+what are the important folders? (part 1)
+	> /
+		- the root directory of the hierarchy
+	> /bin
+		- contains essetial command binaries required for users
+		- nowadays: being merged into /urs/bin (usrmerge)
+	> /boot
+		- contains file for the bootloader
+	> /dev
+		- contains device files that represent hardware and software devices
+		- example: /dev/null, /dev/sda (first SATA drive), /dev/tty
+		  (terminal device file)
+	> /etc
+		- contains system-wide configuration files and directories
+		- these files are generally text files that can be edited for system 
+		  configuration
+
+
+
 
 
 
