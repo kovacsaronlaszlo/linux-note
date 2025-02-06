@@ -302,6 +302,34 @@ what are the important folders? (part 1)
 		- these files are generally text files that can be edited for system 
 		  configuration
 
+===================================
+
+filesystem hierarchy standard (part 2)
+	> /home
+		- contains personal directories for users
+		- user-specific settings, documents, and other files are stored here
+	> /lib
+		- contains library files that supports the binaries located under /bin and
+		  /sbin
+		- depending on the system, we might also have additional lib folders for
+		  additional architectures
+		  example: /lib32, /lib64
+		- nowadays: being merges into /usr/lib (usrmerge)
+	> /media
+		- contains mount points for removable storage media
+	> /mnt
+		- mount points for additional filesystem
+	> /opt
+		- optinal application software packages can be stored here
+
+===================================
+
+
+
+
+
+
+
 
 
 
