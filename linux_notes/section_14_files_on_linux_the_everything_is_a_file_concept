@@ -252,7 +252,26 @@ important pseudo devices
 # /dev/stdin, /dev/stdout, /dev/stderr
 	> facialitates input /output / errors for normal Unix programs
 
+===================================
 
+important /proc files (procfs)
+# if we want to inspect our system, we can look into files in the /proc folder
+	> /proc/cpuinfo
+		- contains information about the system's CPU(s), like vendor, model 
+		  and speed
+	> /proc/meminfo
+		- displays the current memory usage of the system, including physical
+		  and swap memory
+	> /proc/version
+		- contains version information about the kernel, gcc, and the operating 
+		  system
+	> /proc/uptime
+		- displays the time the system has been up (in seconds) and the
+		  amount of time it has been idle
+	> /proc/loadavg
+		- shows the system load avarages for the past 1,5 and 15 minutes,
+		  number of currently running process / and number of threads, and
+		  the last PID
 
 
 
