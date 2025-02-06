@@ -1,4 +1,4 @@
-files on Unix
+űfiles on Unix
 # in this chapter:
 	> will have a look at the folder structure on Linux systems
 	> will have a look at what a file is:
@@ -324,6 +324,26 @@ filesystem hierarchy standard (part 2)
 
 ===================================
 
+what are the important folders? (part 3)
+	> /proc
+		- virtual filesystem (usually procfs)
+		- provides information about processes and the kernel
+	> /root
+		- contains the personal data for the root user 
+		  (home folder of the root user)
+	> /run 
+		- run-time data
+		- files here will be removed / emptied during boot, or will be discared 
+		  on shutdown
+	> / sbin
+		- contains essential system binaries that are generally used by the 
+		  root user
+		- nowadays: being merged into /usr/sbin (usrmerge)
+	> /srv
+		- files for service (if we dont store them in /var)
+		- quite ofeten, date offered by FTP servers
+	> /sys
+		- information about device, drivers and kernel features
 
 
 
@@ -338,5 +358,4 @@ filesystem hierarchy standard (part 2)
 
 
 
-
-
+	
