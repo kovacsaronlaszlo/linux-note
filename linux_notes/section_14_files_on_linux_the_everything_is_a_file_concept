@@ -213,6 +213,29 @@ buffered:
 
 ===================================
 
+"everything is a stream of bytes" (linus torvalds)
+# (almost) all hardware devise are represented as a "file"
+# (or to be more precise: as a stream of bytes)
+# throught this "file", we can enable access to the underlying hardware without
+# knowing it a technical details
+
+what is a device?
+# a device refers to a physical or virtual entity that can be accessed through a filelike interface
+# device in Unix serve as the interface between the operating system and various hardware or virtual component
+# the allow applications and users to interact eith these components by reading from and writing to their corresponding device files
+
+what kind of device does Unix support?
+# character device (c)
+	> gain unbufferes, dierct access to the hardware
+	> usually, access those device by reading a byte (charater)
+	> though there might be additional restrictions / requirements for certain character devices
+# block device (b)
+	> gain buffered access to the hardware
+	> multiple bytes are bundled into a block
+	> access this device through accessing those blocks
+# pseudo device
+	> those are devices that dont necessarily refer to a physical device
+	> depending on the type, they may show up as a block device or a character device
 
 
 
