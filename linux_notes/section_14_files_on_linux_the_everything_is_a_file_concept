@@ -188,11 +188,30 @@ Increasing the inode limit
 
 ===================================
 
+buffered vs unbuffered I/O
 
+unbuffered:
+# directly handles data between tha I/O device and the program
+# real-time data:
+	> offers more precise control over data flow and timing
+# example:
+	> reading data from keyboard
+	> reading data from sensors
 
+buffered:
+# utilizes a temporary storage area (buffer) to hold data befora its being recieved / sent
+  # to the I/O device
+# advantages:
+	> efficiency: reduces teh number of I/O operations by accumulating data 
+		      before processing
+	> performance: enhances speed, espacially for disk and network operations
+	> data integrity: simplifies the implementation of data intagrity checks
+	> ideal for large, sequential data transfer
+# typical examples:
+	> reading files from the disk
+	> witing data to disk in blocks
 
-
-
+===================================
 
 
 
