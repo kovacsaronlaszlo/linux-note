@@ -168,9 +168,25 @@ what is a hard link?
 		$ ls 
 		... restructured ...
 
+===================================
 
+Increasing the inode limit
+# during the createion of a filesystem, space is reserved for inodes
+# this space cant be used for anything else
+# we can show how many inodes are being used:
+	$ df -ih
+# usually, the limit should sufficiently high, so we'll never reach it
+# but if your application uses many small files:
+	> this can be (theoretically) reached
+	> processes or applications creach or cant be started
+	> operating system crashes
+	> to solve this:
+		- remove files that are no longer needed
+		- compress multiple files into an archive (form example: .tar)
+		- recreate your filesystem with a higher inode limit
+		- store data on additional drives (and mount them)
 
-
+===================================
 
 
 
