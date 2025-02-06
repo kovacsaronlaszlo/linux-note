@@ -345,6 +345,25 @@ what are the important folders? (part 3)
 	> /sys
 		- information about device, drivers and kernel features
 
+===================================
+
+filesystem hierarchy standard (part 4)
+	> /tmp
+		- contain temporary files created by system and users
+		- these files are typically deleted on reboot
+	> /usr
+		- contains shareable, read-only data
+		- this includes system binaries, libaries, documentation, and source-code
+		  for various system programs
+		- usually, files in the folders could be shared between multiple computers
+		- BUT
+		  -- /use/local
+		     this folder is for files that should not be shared between 
+		     multiple computers
+	> /var
+		- conatians variable data files such as log, database, websites and email,
+		  among other rings
+		- this directory's contants changes as the system runs
 
 
 
