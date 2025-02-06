@@ -365,16 +365,25 @@ filesystem hierarchy standard (part 4)
 		  among other rings
 		- this directory's contants changes as the system runs
 
+===================================
+
+what is the usrmerge project?
+# we can answer the following questions:
+why is /bin indetical to /usr/bin?
+why is /sbin indetical to /usr/sbin?
+why is /lib indetical to /usr/lib?
+
+# usrmerge project:
+	> a project to simplify the filesystem hierarchy on linux systems
+	> it merges several directory that traditionally exist on the root
+	  level (/) into their counterparts in /usr
+	> back then:
+		- it was important to differentiate between /lib and /usr/lib
+		- reasoning: bach then, we might have wanted to store /usr on
+		  a different, physical drive
+		- /bin, /sbin, /lib would only contain applications that are
+		  absolutely necessary to fix  a broken system
 
 
-
-
-
-
-
-
-
-
-
-
-	
+	> nowadays, this no longer necessary:
+		- thus, we can now simplify our directory structure
