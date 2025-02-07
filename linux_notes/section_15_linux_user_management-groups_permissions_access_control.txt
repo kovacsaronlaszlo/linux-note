@@ -1,0 +1,31 @@
+how do users in linux work?
+# different kind of users (main 3):
+	> root user:
+		- highest privileges
+		- it has the user ID: 0
+		- there can only be one root on the system
+	> regular users:
+		- limited privileges
+		- we can allow regular users to temoprarily get toot access through sudo
+	> service users:
+		- for specific tasks
+		- this allows us to safely run a webserver, database...
+# groups:
+	- all users have a primary group
+	- can be assigned to zero to unlimited additional groups
+
+managing users
+# on linux, user information is stored in various files:
+	> /etc/passwd
+		- contains basic user account information
+		- username, user ID (UID), group ID (GID), user description (full name),
+		  home directory and default shell
+		- readable by all users
+	> /etc/shadow
+		- stores encrypted user password and passwoord aging information
+		- also stores additional information, such as the date of the
+		  last password changes, expiry dates...
+		- readable only by the root users (or users with root privileges)
+	> /etc/group
+		- contains information about the groups, and their members
+		- readable by all users
