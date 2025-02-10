@@ -194,9 +194,30 @@ existing groups in ubuntu:
 
 =====================================
 
+add user ti a group
 
+# can use usermod command for this
+# syntax: usermod [options] username
+# manage groups:
+	> -g: change primary group
+	> -G: change secondary groups
+	> -aG: add secondary group
+# example:
+	$ groups [rootuser] lauren
+	... list users groups ...
+	$ sudo usermod -G adm,plugdev,lpadmin lauren
+	$ groups lauren
+	lauren: lauren adm plugdev lpadmin
+	$ sudo usermod -G amd,lpadmin lauren
+	lauren: lauren adm lpadmin
+	$ sudo usermod -aG plugdev lauren
+	lauren: lauren adm plugdev lpadmin
 
+# depending on the system, might also be able to use additional tools:
+	> adduser [user] [group]
+	> deluser [user] [group]
 
+=====================================
 
 
 
