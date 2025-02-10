@@ -108,7 +108,10 @@ managing users: passwd
 	passwd: Authentication token manipulation error
 	passwd: password unchanged
 
+=====================================
 
+password expiration?
+$ sudo passwd -n 7 -x 30 lauren // should be forced to change its password every 30 days
 
 
 
