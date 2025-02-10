@@ -157,8 +157,42 @@ delete users: userdel
 
 =====================================
 
+groups on linux systems
 
+# motivation: they help us to:
+	> organizing users with similar access rights
+	> simplify permisssino management
+	> enhancing collaboration and resource sharing
+	> controlling access to files and directories
+	> strengthening system security
+# how do groups work?
+	> each user has a primary, and tero to many secondary groups
+	> primary group:
+		-- stored in /etc/passwd
+		-- default ownership for new files
+	> secodary group(s):
+		-- multiple memberships allowed
+		-- stored in /etc/group
+		-- this allows us to give this user fine grained access rights 
+		   to our system
+	> can list a user's groups with the following command:
+		$ groups [username]
 
+existing groups in ubuntu:
+# few existing group
+# selection of the most important groups
+	> root: the superuser group with administrarive priviliges, 
+		allowing complete control over the system
+	> sudo / wheel: members can use sudo. May also be called "wheel"
+	> adm: allows memebers to read log files
+	> lpadmin / lp: memebers may manage printers and print queues (CUPS)
+			May also be called "lp"
+	> www-data: a groups for web server processes (such as Apache or Nginx),
+		    gives access to web content
+	> plugdev: allows this user to manage pluggable devices 
+		   (usb sticks, external HDDs ...)
+
+=====================================
 
 
 
