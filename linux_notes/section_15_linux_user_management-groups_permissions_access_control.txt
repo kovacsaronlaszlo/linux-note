@@ -135,6 +135,29 @@ changing users: usermod
 
 =====================================
 
+delete users: userdel
+# deleteing existing user
+	> userdel [options] username
+	> a few option:
+		>> -r: removes the home directory + mails
+		>> -f: removes the home directory + mails, forces the removal of the user,
+			is still logged in, might also delete a group with the same name 
+			as this user
+			(depending on system configuration)
+# exmaple:
+	$ sudo useradd -m max
+	$ ls /home
+	... max ...
+	$ sudo userdel max
+	$ ls /home
+	... max ...
+	$ sudo rm -R /home/max
+	$ sudo useradd -m max
+	$ sudo userdel -r max
+
+=====================================
+
+
 
 
 
