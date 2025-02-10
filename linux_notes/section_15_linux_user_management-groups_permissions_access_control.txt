@@ -113,6 +113,35 @@ managing users: passwd
 password expiration?
 $ sudo passwd -n 7 -x 30 lauren // should be forced to change its password every 30 days
 
+=====================================
+
+changing users: usermod
+# can modify another user's details
+# syntax: usermod [options] username
+# important options:
+	> -c: change user description (full name)
+	> -s: change default shell
+	> should really consider if we want to use those options:
+		>> -d: change direction (-m to also move the existing home directory
+			to the new location)
+		>> -l: change username
+	> manage groups:
+		>> -g: change primary group
+		>> -G: change secondary groups
+		>> -aG: add secondary group
+
+#example:
+	$ sudo usermod -s /bin/bash -c 'Lauren M.' lauren
+
+=====================================
+
+
+
+
+
+
+
+
 
 
 
