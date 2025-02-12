@@ -219,6 +219,49 @@ add user ti a group
 
 =====================================
 
+how to create a group?
+# use the "groupadd" command
+# syntax: groupadd [options] groupname
+# important option:
+	> -g: options to set custom GID
+# example: 
+	$ groupadd -g 1005 newgroup
+# the group info then stored in the /etc/group file
+# other example:
+	$ sudo groupadd -g 2500 myapp
+	$ cat /etc/group
+	...
+	myapp:x:2500:
+
+how can we change a group?
+# use the "groupmod" command
+# syntax: groupmod [option] groupname
+# importatn option:
+	> -n: change the name of the group
+	> -g: change the group id (GID)
+# this will update /etc/group and /etc/passwd
+# example:
+	$ sudo groupmod -n my-app -g 5000 myapp
+	$ cat /etc/group
+        ...
+        my-app:x:5000:
+
+how can we delete a group?
+# use the "groupdel" command
+# syntax: groupdel groupname
+# important:
+	> this command does not delete group-owned files
+	> this command will update /etc/group and /etc/passwd
+	> this will fail, if the group is the primary group of a user!
+# example:
+	$ sudo groupdel my-app
+
+=====================================
+
+
+
+
+
 
 
 
