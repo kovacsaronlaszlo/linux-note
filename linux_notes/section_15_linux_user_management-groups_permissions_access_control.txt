@@ -258,8 +258,37 @@ how can we delete a group?
 
 =====================================
 
+switch user "su" command
+# switch the user with the "su" command
+# "su" stands for "switch user"
+# can just enter:
+	> su [other-user]
+# we will have to provide the password for the other user
+# and then we will be logged in as the other user!
+# example:
+	$ su lauren
+	Password: <lauren user pass>
+	/home/myuser $ ls
+	ls: cannot open directory '.': Permission denied
+	/home/myuser $ cd ~
+	$ ls
+	Desktop Documents ... Videos
+	$ exit
+	// go back the user as you were before
+# to switch o root user:
+	$ su
+	Password: <root user password>
+	root $ exit
+	$
+# can be deleted the root user password:
+	$ sudo passwd -d root
+	$ su
+	root $ exit
+	$
+# can be deleted the root user password but lock it too:
+	$ sudo passwd -d -l root
 
-
+=====================================
 
 
 
