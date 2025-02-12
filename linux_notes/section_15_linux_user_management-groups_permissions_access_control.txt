@@ -290,6 +290,35 @@ switch user "su" command
 
 =====================================
 
+Heads-up: EDITOR for visudo
+
+Sometimes, especially on CentOS systems, visudo might 
+open the text editor vi instead of nano. If this happens, 
+you can quit vi by typing in :q. If this doesn't work, 
+you can also just close the terminal and open a new one.
+
+In order to change this to nano, 
+we might need to set the environment variable EDITOR.
+
+However, when using sudo, sudo will sanitise (meaning: delete) 
+most environment variables for the command we're calling. 
+This is great, as it improves the security - but inheriting 
+the environment variable won't work:
+
+	$ export EDITOR=nano
+	$ sudo visudo
+
+Thus, it's best to just specify the environment variable 
+just after the sudo:
+
+	$ sudo EDITOR=nano visudo
+
+=====================================
+
+
+
+
+
 
 
 
