@@ -368,6 +368,40 @@ changing privileges: sudo intro different user
 
 =====================================
 
+advanced sudo: /etc/sudoers
+# what does this line mean?
+	> <your-user> ALL=(ALL:ALL) ALL
+		>> <your-user>: the username, this rule should be applied to this user
+		>> ALL: the hostname that this rule should apply to
+		>> (ALL:ALL): the run configuration
+			- the first ALL: the user that the user <your-user> can sudo into
+			- the second ALL: the group that the user <your-user> can 
+					sudo into
+			-  if we dont specify this, we can only sudo into the root user
+		>> ALL: the command specification, ALL means any command
+	> sudo without password?
+		>> we can also specify "NOPASSWD:", to allow sudo wothout a password
+		(potential security risk!!!):
+		>> <your-user> ALL=(ALL:ALL) NOPASSWD: ALL
+		
+# we can also just allow specific progrmas:
+	$ <your-user> ALL= NOPASSWD: /usr/bin/apt-get
+	> this would give <your-user> access to only the program apt-get
+	> this might also be a security issue:
+		>> i could also remove any program I want
+		>> i could install any program I want
+		>> some og those programs might start a service that runs in
+		   the background... and executes files
+		>> those then might be executed with additional priviliges
+
+=====================================
+
+
+
+
+
+
+
 
 
 
