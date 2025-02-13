@@ -315,9 +315,42 @@ just after the sudo:
 
 =====================================
 
+the "sudo command in linux
+# sudo stands for "superuser do"
+# it gives us temporary privileges of another user - by default from the root user
+# it thus executes commands with elevated / changed permission
+# requires user authentication (with the user's password)
+# the user must be allowed to use "sudo"
 
+configuring sudo access
+# how do we allow a user to use sudo?
+	> those are configured in the file /etc/sudoers
+	> we shpuld only use the visudo command to safely edit this file!
+		$ sudo visudo /etc/sudoers	// if not change anything and quit
+		visudo: /etc/sudoers.tmp unchanged
+	> example, gives the user full sudo access:
+		<your-user> ALL=(ALL:ALL) ALL
+	> exmaple, gives the group <your-group> full sudo access:
+		%<your-group> ALL=(ALL:ALL) ALL
+	
+	> we could also use a group to enable sudo access:
+		>> group: sudo
+		>> usermod -aG sudo <your-user>
+		>> on other system, this group moght also be called "wheel"
 
+using sudo in the terminal
+# how can we use sudo in the terminal?
+	> we can just prefix the command with "sudo"
+	> example: (ubuntu/debian):
+		$ sudo apt-get update
+			or
+		$ sudo dnf update
+	> we then need to enter our user password
+	> "sudo" will be stored in a session (by default: 15 minutes)
+	> we can expire the session with the command "sudo -k"
+	> or we also start a shell with additional privileges: "sudo -s"
 
+=====================================
 
 
 
