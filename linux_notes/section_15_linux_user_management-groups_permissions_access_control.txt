@@ -352,6 +352,28 @@ using sudo in the terminal
 
 =====================================
 
+changing privileges: sudo intro different user
+
+# we can also use "sudo" to start a program as a different user:
+	> sudo -u [user] -g [group]
+	> example:
+		$ sudo -u <other-user> bash
+		> this would start the program "bash" as the user lauren
+
+		$ sudo -u lauren
+		...
+		$ sudo -u lauren touch /home/lauren/file-sudo.txt
+		[sudo] password for <your-user>: 
+		// command has been executed!!!
+
+=====================================
+
+
+
+
+
+
+
 
 
 
