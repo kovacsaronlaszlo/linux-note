@@ -396,13 +396,95 @@ advanced sudo: /etc/sudoers
 
 =====================================
 
+file permissions on linux
+# why do we need file permissions?
+	> control access to files and directories
+	> determine who can read, write and execute those files
+	> there is 3 important levels of permission:
+		>> owner (u)
+		>> group (g)
+		>> others (o)
+# example:
+	$ ls file.txt
+	$ ls -al file.txt
+	-rw-rw-r-- 1 <your-user> <your-group> 0 Feb 13 15:19 file.txt
 
+# type of permissions:
+	> read (r / 4): allows viewing file contents listing directory contents
+	> write (w / 2): allows modifying file contents or creating / deleting diles in
+			 directory
+	> execute (x / 1): allows running a file a program or changing into this directory
 
+# premission levels: owner (u), group (g), others (o)
+# type of permissions: read (r / 4), write (w / 2), execute (x / 1)
+# how do we assign permission to a file?
+	> we can use the "chmod" command for this
+	> example:
+		$ chmod u+x file.txt
+		>> would give the owner (u) executable rights
+		$ chmod g-w file.txt
+		>> would remove the write permission for the groups (g)
+		$ chmod o+r file.txt
+		>> would give other users (o) read access to this file or directory
+# example:
+	$ sudo touch sudo_file.txt
+	[sudo] password for <your-user>:
+	$ ls -al sudo_file.txt 
+	-rw-r--r-- 1 root root 0 Feb 13 15:27 sudo_file.txt
+	$ cat sudo_file.txt
+	$ nano sudo_file.txt
+	// its open, but the file is unwriteable
+	$ sudo chmod o+w sudo_file.txt
+	$ nano sudo_file.txt
+	// edit it something
+	$ cat sudo_file.txt
+	test
+	$ ls -al sudo_file.txt 
+	-rw-r--rw- 1 root root 5 Feb 13 15:32 sudo_file.txt
 
+# changing owner / group of a file
+	> we can also change the owner / group of a file:
+		>> chown user: group file.txt
+		>> this sets the owner to "user", and the group to "group"
+	> example:
+		$ sudo chmod o-w sudo_file.txt
+		$ ls -al sudo_file.txt 
+		-rw-r--r-- 1 root root 5 Feb 13 15:32 sudo_file.txt
+		$ sudo chown root:<your-user> sudo_file.txt
+		$ ls -al sudo_file.txt 
+		-rw-r--r-- 1 root <your-user> 5 Feb 13 15:32 sudo_file.txt 
+		$ sudo chmod g+w sudo_file.txt
+		$ ls -al sudo_file.txt
+		-rw-rw-r-- 1 root <your-user> 5 Feb 13 15:32 sudo_file.txt
+		$ nano sudo_file.txt
+		// change something
+		$ cat sudo_file.txt
+		test!
 
+=====================================
 
+file permission: chmod 777
 
+chmod with numeric values:
+# premission levels: owner (u), group (g), others (o)
+# type of permissions: read (r / 4), write (w / 2), execute (x / 1)
+# how do we assign persmission to a file?
+	> can use the "chmod" command for this
+	> examples:
+		$ chmod 754 file.txt
+		>> first digit is for the owner: 7 = 4 + 2 + 1 => read, write, execute
+		>> second digit is for the group: 5 = 4 + 1 => read, execute
+		>> third digit is for all others: 4 => read
 
+# example:
+	$ ls -al sudo_file.txt 
+	-rw-rw-r-- 1 root <your-user> 6 Feb 13 15:38 sudo_file.txt
+	$ sudo chmod 777 sudo_file.txt 
+	[sudo] password for <your-user>:
+	$ ls -al sudo_file.txt 
+	-rwxrwxrwx 1 root <your-user> 6 Feb 13 15:38 sudo_file.txt
+
+=====================================
 
 
 
