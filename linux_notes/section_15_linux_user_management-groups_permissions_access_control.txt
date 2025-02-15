@@ -554,11 +554,72 @@ changing permission
 
 =====================================
 
+advanced file permission: umask
 
+why do we need a umask?
+# the "umask" allows us to specify who should be able to access new files
+# thus, this is an important security feature
+# if you're the sysadmin, you might want to evaluate this, and se which value
+# is most appropriate for the "umask" in your organization
 
+# the idea:
+	> it thus determines the default permission for new files / directories
+# how does it work?
+	> we have some base permissions
+	> and from those, we subtract the umask value (technically: we apply a bitmask
+	  accordiing to the binary representation of our umask value)
+	> base permission are usually:
+		>> 777 for directories, 666 for files
+	> if we set the umask to 022:
+		>> directories will have 755
+			-- owner: read + write + execute
+			-- group and others: read + execute (but not write)
+		>> and files wll be 644:
+			-- owner: read + write
+			-- group and others: read (but not execute + write)
 
+# example:
+	$ umask
+	0022
 
+how to change umask?
+# how can we change the umask value?
+	> temorarily change it (shell session)
+		>> umask [new mask]
+	> exmaple:
+		$ umask 022
+		0022
+		$ touch umaks.txt
+		$ ls -l umaks.txt
+		$ ls -l umask.txt 
+		-rw-r--r--. 1 <your-user> <your-group> 0 Feb 15 12:04 umask.txt
+		// owner can read and write, gourp only read, other only read
+		$ umask 026
+		$ touch umask2.txt
+		-rw-r-----. 1 <your-user> <your-group> 0 Feb 15 12:06 umask2.txt
+		// owner can read and write, group can read, other cant do anything!
+	> permanently change it (for shell):
+		>> we can add the umask command to one of the startup file our bash
+		   (exmaple: ~/.bashrc)
+	> permanently change it (for all programs):
+		>> ususally, we can edit this in the following file:
+			-- /etc/login.defs
+		>> this should then also affect new GUI sessions
+		>> be aware:
+			-- changes umask command in a shell overwrite this for the current shell session
+			-- those changes should usually applied autamtically during
+			   startup -if a new shell doesn't pisk them ip, be sure to make sure
+			   the umask is not overwritten during startup of the shell
+	> example:
+		$ sudo ls /etc/ | grep -F log
+		...
+		login.defs
+		...
+		$ sudo nano /etc/login.defs
+		// ctrl+w than write umask, you can change umask value to 027 (to increased privacy)
+		// and restart the system
 
+=====================================
 
 
 
