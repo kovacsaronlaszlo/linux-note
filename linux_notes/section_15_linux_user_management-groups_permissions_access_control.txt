@@ -486,6 +486,80 @@ chmod with numeric values:
 
 =====================================
 
+how do file permission work for directoryies?
+# read (r): access directory content
+# write (w): add or remove files
+	> (we also need execute permisssions for this though)
+# execute (x): enter and traverse directory
+# example:
+	$ mkdir website
+	$ nano website/index.html
+	// edit something
+	$ cat index.html
+	<h1>This is az example for 158th video</h1>
+	$ ls -al
+	...
+	drwxr-xr-x. 1 <your-user> <your-group>  20 Feb 15 11:16 website
+	$ chmod 000 website/
+	$ cd website/
+	bash: cd: website/: Permission denied
+	$ ls website/
+	ls: cannot open directory 'website/': Permission denied
+	$ touch website/page2.html
+	touch: cannot touch 'website/page2.html': Permission denied
+	$ chmod u+w website/
+	$ ls website/
+	ls: cannot open directory 'website/': Permission denied
+	$ cd website/
+	bash: cd: website/: Permission denied
+	$ touch website/page2.html
+	touch: cannot touch 'website/page2.html': Permission denied
+	$ chmod u+x website/
+	$ touch website/page2.html
+	$ ls website/
+	ls: cannot open directory 'website/': Permission denied
+	$ cd website
+	website $ ls
+	ls: cannot open directory '.': Permission denied
+	website $ nano page2.html
+	// you can edit the file
+	website $ cd ..
+	$ ls -al 
+	...
+	d-wx------. 1 <your-user> <your-group>  40 Feb 15 11:23 website
+	$
+
+changing permission
+# if we want to change permission / ownership for a whole directory structure...
+# ... we can use the paramter -R:
+	> chown <other-user>:<other-group> -R ./directory
+	> chmod 777 -R ./directory
+
+# exmaple:
+	$ chmod 777 -R wensite
+	$ ls -al website
+	total 4
+	drwxrwxrwx. 1 <your-user> <your-group> 40 Feb 15 11:23 .
+	drwxr-xr-x. 1 <your-user> <your-group> 56 Feb 15 11:15 ..
+	-rwxrwxrwx. 1 <your-user> <your-group> 44 Feb 15 11:16 index.html
+	-rwxrwxrwx. 1 <your-user> <your-group>  0 Feb 15 11:23 page2.html
+	$ sudo chown <your-user>:<other-group> -R website/
+	[sudo] password for <your-user>:
+	$ ls -al website
+        total 4
+        drwxrwxrwx. 1 <your-user> <other-group> 40 Feb 15 11:23 .
+        drwxr-xr-x. 1 <your-user> <your-group> 56 Feb 15 11:15 ..
+        -rwxrwxrwx. 1 <your-user> <other-group> 44 Feb 15 11:16 index.html
+        -rwxrwxrwx. 1 <your-user> <other-group>  0 Feb 15 11:23 page2.html
+
+=====================================
+
+
+
+
+
+
+
 
 
 
