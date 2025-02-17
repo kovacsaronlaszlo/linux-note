@@ -722,7 +722,21 @@ advanced file permisssions: SUID / SGID
 	> uppercase "S": SGID bit, but without execute bit
 # sudo shmod g+s python3
 
+=====================================
 
+groups: best-practices
+
+# best-practices:
+	> prefer groups to manage privileges
+	> use meaningful group names
+	> follows the principle of least privilege:
+		>> assigning users only the necessary permissions and group
+		   membership required
+		>> avoiding the use of overly permissive avvess rights
+		>> dont give write access to everybody
+		>> minimizing the number of users with elevated privileges
+	> keep group memberships up-to-date
+	> regularly review group permissions
 
 
 
