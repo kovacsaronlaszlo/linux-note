@@ -1,0 +1,29 @@
+Important [CentOS]: Note for CentOS Users
+
+Important note for CentOS users:
+
+In this chapter, we will be installing several additional software to visualize 
+the concept of processes.
+
+In order to be able to use those, you need to be able to access 
+additional packages (Extra Packages for Enterprise Linux) on your system. For this, you need to make sure epel-release is installed on your system:
+
+"sudo yum install epel-release"
+
+You can then install all the tools you need for this chapter with the following command:
+
+"sudo yum install wget htop"
+
+==================================
+
+
+
+
+
+
+
+
+
+
+
+
