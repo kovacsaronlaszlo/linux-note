@@ -683,10 +683,44 @@ advanced file permission: stricky bit
 
 =====================================
 
+advanced file permisssions: SUID / SGID
+# SUID = Set User ID
+# the idea:
+	> we can set a special bit for executable files
+	> if this bit is set:
+		>> the executable will bain the rights of the owner
+		>> this allows unprivilaged users to access privileged resource
+	> be careful:
+		>> this can be a major security issue if used improperly
+		>> on most systems, the SUID bit is limitied to executable binary files
+		>> it is usually not supported for executable scripts (.sh, .py ...)
+		>> if we set it on our own programs, we can easily create major
+		   security vulnerabilities. Be extremely careful!
+# how can we inspect the SUID bit?
+	> ls -l file
+	> example:
+		>> -rwsrwxrwx (s is the important character here)
+	> lowercase "s": SUID bit + executable bit
+	> uppercase "S": SUID bit, but without execute bit
+	> example:
+		$ which sudo
+		/usr/bin/sudo
+		$ ls -l /usr/bin/sudo
+		-rwsr-xr-x 1 root root 277936 Apr  8  2024 /usr/bin/sudo
 
+# we can also set the SUID bit:
+	> chmod u+s file
+	> important:
+		>> we should also limit write access to this file as much as possible!
 
-
-
+# SGID = Set Group ID
+# example:
+	> ls -l file
+	> -rwxrwsrwx (s is the important character)
+# it works the same as for the SUID
+	> lowercase "s": SGID bit + execute bit
+	> uppercase "S": SGID bit, but without execute bit
+# sudo shmod g+s python3
 
 
 
