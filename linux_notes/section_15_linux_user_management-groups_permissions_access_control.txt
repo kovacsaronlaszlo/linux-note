@@ -486,6 +486,70 @@ chmod with numeric values:
 
 =====================================
 
+advanced file permission: stricky bit
+# the stick bit is an extra bit that we can set for all files or directories
+# it has different meaning:
+	> for files:
+		>> obolete, no longer used
+		>> it used to indicate that an executable file can remain in memory,
+		   to be loaded more quickly on next launch
+	> for directories:
+		>> without the sticky bit, any user with write + execute
+		   permission for a directory can rename / delete files in it
+		>> if the sticky bit set, only the owner (and root) of file or the
+		   the directory owner can rename or delete a file
+# the sticky bit is especially used for the "/tmp" folder
+# example:
+	$ cd /
+	// go to the root folder
+	/ $ sudo mkdir /data
+	[sudo] password for <your-user>:
+	/ $ ls -al
+	...
+	drwxr-xr-x 2 root       root       4096 Feb 17 13:44 data
+	...
+	/ $ sudo chmod 777 /data
+	/ $ sudo chown <your-user>:<your-group> /data
+	/ $ ls -al
+	...
+	drwxrwxrwx 2 <your-user> <your-group> 4096 Feb 17 13:44 data
+	...
+	/ $ cd data
+	/data $ touch file.txt
+	/data $ ls
+	file.txt
+	/data $ ls -al
+	...
+	-rw-rw-r-- 1 <your-user> <your-group>    0 Feb 17 13:49 file.txt
+	/data $ chmod 660 file.txt
+	/data $ ls -al
+	...
+	-rw-rw---- 1 <your-user> <your-group>    0 Feb 17 13:49 file.txt
+
+# how can we set the sticky bit?
+	> chmod +t [folder]
+	> or in octal notation:
+		>> set sticky bit: chmod 1777 [folder]
+		>> inset sticky bit: chmod 0777 [folder]
+# how can we inspect the sticky bit?
+	> we can use the "ls -l" command for this:
+		>> ls -l
+	> if the sticky bit is set:
+		>> if the file / directory also nas executable permission for others:
+			-- last character will be a "t"
+		>> otherwise, the last character will be a "T"
+		>> example:
+			/ $ ls -al
+			...
+			dr-xr-xr-x  13 root root          0 Feb 17 06:14 sys
+			drwxrwxrwt  36 root root       4096 Feb 17 13:54 tmp
+			drwxr-xr-x  12 root root       4096 Aug 27 17:37 usr
+			...
+
+=====================================
+
+
+
 
 
 
