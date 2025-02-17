@@ -16,6 +16,20 @@ You can then install all the tools you need for this chapter with the following 
 
 ==================================
 
+how do processes work?
+# process:
+	> an instance of a progam
+	> independent execution unit with its own resources:
+		>> CPU & MEmory resources
+		>> opened files, network connections...
+	> it is managed by the kernel (lowest level of the operating system)
+	> each process has:
+		> process ID (pid)
+		> a user under which  this process runs under
+		> a state (running, waiting, stopped, zombie)
+		> all process are organized in a hierachy!
+
+==================================
 
 
 
