@@ -486,6 +486,141 @@ chmod with numeric values:
 
 =====================================
 
+how do file permission work for directoryies?
+# read (r): access directory content
+# write (w): add or remove files
+	> (we also need execute permisssions for this though)
+# execute (x): enter and traverse directory
+# example:
+	$ mkdir website
+	$ nano website/index.html
+	// edit something
+	$ cat index.html
+	<h1>This is az example for 158th video</h1>
+	$ ls -al
+	...
+	drwxr-xr-x. 1 <your-user> <your-group>  20 Feb 15 11:16 website
+	$ chmod 000 website/
+	$ cd website/
+	bash: cd: website/: Permission denied
+	$ ls website/
+	ls: cannot open directory 'website/': Permission denied
+	$ touch website/page2.html
+	touch: cannot touch 'website/page2.html': Permission denied
+	$ chmod u+w website/
+	$ ls website/
+	ls: cannot open directory 'website/': Permission denied
+	$ cd website/
+	bash: cd: website/: Permission denied
+	$ touch website/page2.html
+	touch: cannot touch 'website/page2.html': Permission denied
+	$ chmod u+x website/
+	$ touch website/page2.html
+	$ ls website/
+	ls: cannot open directory 'website/': Permission denied
+	$ cd website
+	website $ ls
+	ls: cannot open directory '.': Permission denied
+	website $ nano page2.html
+	// you can edit the file
+	website $ cd ..
+	$ ls -al 
+	...
+	d-wx------. 1 <your-user> <your-group>  40 Feb 15 11:23 website
+	$
+
+changing permission
+# if we want to change permission / ownership for a whole directory structure...
+# ... we can use the paramter -R:
+	> chown <other-user>:<other-group> -R ./directory
+	> chmod 777 -R ./directory
+
+# exmaple:
+	$ chmod 777 -R wensite
+	$ ls -al website
+	total 4
+	drwxrwxrwx. 1 <your-user> <your-group> 40 Feb 15 11:23 .
+	drwxr-xr-x. 1 <your-user> <your-group> 56 Feb 15 11:15 ..
+	-rwxrwxrwx. 1 <your-user> <your-group> 44 Feb 15 11:16 index.html
+	-rwxrwxrwx. 1 <your-user> <your-group>  0 Feb 15 11:23 page2.html
+	$ sudo chown <your-user>:<other-group> -R website/
+	[sudo] password for <your-user>:
+	$ ls -al website
+        total 4
+        drwxrwxrwx. 1 <your-user> <other-group> 40 Feb 15 11:23 .
+        drwxr-xr-x. 1 <your-user> <your-group> 56 Feb 15 11:15 ..
+        -rwxrwxrwx. 1 <your-user> <other-group> 44 Feb 15 11:16 index.html
+        -rwxrwxrwx. 1 <your-user> <other-group>  0 Feb 15 11:23 page2.html
+
+=====================================
+
+advanced file permission: umask
+
+why do we need a umask?
+# the "umask" allows us to specify who should be able to access new files
+# thus, this is an important security feature
+# if you're the sysadmin, you might want to evaluate this, and se which value
+# is most appropriate for the "umask" in your organization
+
+# the idea:
+	> it thus determines the default permission for new files / directories
+# how does it work?
+	> we have some base permissions
+	> and from those, we subtract the umask value (technically: we apply a bitmask
+	  accordiing to the binary representation of our umask value)
+	> base permission are usually:
+		>> 777 for directories, 666 for files
+	> if we set the umask to 022:
+		>> directories will have 755
+			-- owner: read + write + execute
+			-- group and others: read + execute (but not write)
+		>> and files wll be 644:
+			-- owner: read + write
+			-- group and others: read (but not execute + write)
+
+# example:
+	$ umask
+	0022
+
+how to change umask?
+# how can we change the umask value?
+	> temorarily change it (shell session)
+		>> umask [new mask]
+	> exmaple:
+		$ umask 022
+		0022
+		$ touch umaks.txt
+		$ ls -l umaks.txt
+		$ ls -l umask.txt 
+		-rw-r--r--. 1 <your-user> <your-group> 0 Feb 15 12:04 umask.txt
+		// owner can read and write, gourp only read, other only read
+		$ umask 026
+		$ touch umask2.txt
+		-rw-r-----. 1 <your-user> <your-group> 0 Feb 15 12:06 umask2.txt
+		// owner can read and write, group can read, other cant do anything!
+	> permanently change it (for shell):
+		>> we can add the umask command to one of the startup file our bash
+		   (exmaple: ~/.bashrc)
+	> permanently change it (for all programs):
+		>> ususally, we can edit this in the following file:
+			-- /etc/login.defs
+		>> this should then also affect new GUI sessions
+		>> be aware:
+			-- changes umask command in a shell overwrite this for the current shell session
+			-- those changes should usually applied autamtically during
+			   startup -if a new shell doesn't pisk them ip, be sure to make sure
+			   the umask is not overwritten during startup of the shell
+	> example:
+		$ sudo ls /etc/ | grep -F log
+		...
+		login.defs
+		...
+		$ sudo nano /etc/login.defs
+		// ctrl+w than write umask, you can change umask value to 027 (to increased privacy)
+		// and restart the system
+
+=====================================
+
 advanced file permission: stricky bit
 # the stick bit is an extra bit that we can set for all files or directories
 # it has different meaning:
@@ -547,9 +682,6 @@ advanced file permission: stricky bit
 			...
 
 =====================================
-
-
-
 
 
 
