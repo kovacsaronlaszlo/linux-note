@@ -31,11 +31,48 @@ how do processes work?
 
 ==================================
 
+the "ps" command
+# by default:
+	> ps stands for "Process Status"
+	> display information about running processes
+	> useful for monitoring system resources
+	> it works (almost) the same on macOS and linux
+# how do we use it?
+	> on linux, default usage: ps
+		>> shows all processes of the current terminal (TTY)
+		>> example:
+			$ ps
+			    PID TTY          TIME CMD
+			 211213 pts/2    00:00:00 bash
+			 212148 pts/2    00:00:00 ps
+			$ bash
+			$ ps
+			    PID TTY          TIME CMD
+			 211213 pts/2    00:00:00 bash
+			 212386 pts/2    00:00:00 bash
+			 212522 pts/2    00:00:00 ps
 
-
-
-
-
+# how do we list processes with ps?
+# we can select (and combine) from several paramters:
+	> ps -A, ps -e
+		>> show all processes, from all users and all sessions
+	> ps -f
+		>> full-format listing: show extended information, such as user, terminal,
+		   and parent process (PPID) (try this: ps -ef)
+	> ps -p 1234, 1235 ...
+		>> show processes with process ID 1234 and 1235
+		>> we are also allowed to omit (leave out) the -p, and even the comma
+			$ ps 1234, 1235
+				or
+			$ ps -ef | grep -F 1234
+				or
+			$ ps -ef | less
+	> ps --forest
+		>> onyl linux: show the processes as an ascii tree
+		   (try this: ps -ef --forest)
+	> ps -l
+		>> show entries in long format (a few more columns)
+		   (or try this too: ps -lf / more columns/)
 
 
 
