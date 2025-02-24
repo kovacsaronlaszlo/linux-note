@@ -92,7 +92,25 @@ BSD style paramteres: ps aux
 
 ==================================
 
+multitasking: the scheduler
 
+how does it work?
+# if we only have one CPU inour system
+# how can we execute multiple programs at the same time?
+	> let our CPU switch between those
+	> switch fast enough, it will weem like we're running all programs at the same time
+	> this switching is called scheduling
+
+can we inspect this?
+# if our CPU switches from one program to another, it's called "context switch"
+	> cat /proc/[process ID]/status | grep ctxt
+	> cat /proc/12345/status | grep ctxt
+# we can use the watch command:
+	> this allows us to automatically re-execute a command
+	> here: refresh the output every 0.5 second
+		$ watch -n 0.5 grep ctxt /proc/12345/status
+
+==================================
 
 
 
