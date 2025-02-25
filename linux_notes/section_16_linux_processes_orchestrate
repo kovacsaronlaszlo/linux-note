@@ -112,7 +112,22 @@ can we inspect this?
 
 ==================================
 
-
+setting the priority of a process
+# niceness:
+	> niceness ranges from -20 to +19
+	> default niceness for new processes is typically 0
+	> processes with lower niceness recieve more time from the scheduler
+	> typically:
+		>> we need administrative privileges to lower the niceness / increase the priority of process
+		>> we dont need any privileges to increase the niceness / lower the priority of a process
+# set niceness
+	> nice -n [niceness] [program]:
+		>> sets the niceness to [niceness] for a program
+		>> example:
+			$ nice -n 19 gedit
+	> we can also change the priority of an existing process:
+		>> renice -n 19 [process ID]
+	
 
 
 
