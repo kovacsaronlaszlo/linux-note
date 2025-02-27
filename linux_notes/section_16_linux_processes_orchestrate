@@ -372,6 +372,45 @@ the "killall" command
 
 ==================================
 
+what happens when a process exist?
+what are zombie processes?
+
+
+what happend when a process exist?
+# first, most of the resources are made available again
+# parent process
+	> child termination:
+		>> when a child process terminates, the kernel sends a SIGCHILD
+		   signal to the parent
+		>> the parent can then retrieve the child's exit status
+	> process reaping:
+		>> the parent process uses a system call (wait or waitpid())
+		   to collect the child's exit status
+		>> this action is known as "reaping" the child process
+		>> in a Bash, we can access the child's exit code: $?
+	> orphan process:
+		>> if the parent process and before the child, the child becomes an
+		   orphan and is adopted by the init process (example: nohup firefox)
+
+zombie process
+# definition: a zombie process is a process that has finished executing but still
+  # has an entry in the process table
+# this usually occurs when the parent process hasn't read the child's exit status (yet)
+# characteristics:
+	> zombies can lead to process to preocess table overflow
+	> they are marked as "Z" in the output of "ps -l"
+# removal:
+	> when the parent process ends:
+		>> they're usually removed automatically
+	> if not, they can be manually reaped:
+		>> we can send a SIGCHILD signal to their parent
+	> or we can kill the parent process:
+		>> then, the init process will adopt this process and reap it
+
+==================================
+
+
+
 
 
 
