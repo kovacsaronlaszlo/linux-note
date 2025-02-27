@@ -409,6 +409,20 @@ zombie process
 
 ==================================
 
+process states
+# Running (R) the process is executing
+# Sleeping (S) interruptible state, can be woke up, and can be runable process
+# Uninterruptible sleep (D) special state, the kernel and hardware acces and send data
+			    # our porgram is waiting to execute something
+			    # cannot reciev any signal
+			    # system call (usually I/O)
+
+# Traced or stopped (T) reach sending a SIGSTOP and run again with the SIGCONT
+# Zombie (Z) talk about it above
+
+==================================
+
+
 
 
 
