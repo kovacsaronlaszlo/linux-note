@@ -362,6 +362,17 @@ CHLD CONT STOP TSTP TTIN TTOU URG XCPU XFSZ VTALRM PROF WINCH POLL PWR SYS
 
 ==================================
 
+the "killall" command
+# we can also use the "killall" command for sending signals
+# the difference to kill is, that we select the process by name
+# example:
+	$ killall firefox
+# how do we send a SIGINT with killall?
+	> killall -s [SIGNAL] [process-name]
+
+==================================
+
+
 
 
 
