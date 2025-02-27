@@ -280,8 +280,38 @@ SIGINT
 		>> kill -9 [process ID]
 # you cant use it for kill the vim, for that use :qa
 
+==================================
 
-  
+additional signals: SIGHUP, SIGSTOP, SIGCONT
+
+SIGHUP
+# the SIGHUP signal is used to communicate that the terminal has been closed
+# the program than usually exist
+# it may als mean that the program should reload its configuration
+# example:
+	> kill -s SIGHUP [process ID]
+
+SIGSTOP
+# the process is being put into a stopped state (=paused)
+# non-catchable, the process cant ignore it
+# we can later resume hte process again (with SIGCONT)
+# example:
+	> kill -s SIGSTOP [process ID]
+
+SIGCOUNT
+# we can send this signal to process to resume it again
+# example:
+	> we had stopped a process before (SIGSTOP)
+	> and now we want to resume it
+	> kill -s SIGCONT [process ID]
+
+# interesting example for cobinating these two process:
+	$ kill -s SIGSTOP $(pgrep wget)
+	// process stop
+	$ kill -s SIGCONT $(pgrep wget)
+	// process continous
+
+==================================
 
 
 
