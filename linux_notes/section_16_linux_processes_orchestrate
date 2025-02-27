@@ -422,6 +422,15 @@ process states
 
 ==================================
 
+monitoring system activity: top
+# "top" allows us to display all process from out system
+# we can start this program with the following command:
+	$ top
+	or
+	$ sudo top
+
+==================================
+
 
 
 
