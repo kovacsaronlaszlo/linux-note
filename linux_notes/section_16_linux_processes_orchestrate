@@ -153,9 +153,22 @@ setting the priority of a process
 
 ==================================
 
+getting the process ID for a program
+# let"s say we have a process of the program "firefox"
+# we get it's process ID:
+	$ ps -ef | grep -F 'firefox'
+# but we will also get additional output
+# how can we only get the process ID?
+	> we can use the "pgrep" program
+	> this allows us to search in out programs
+	> and it only return the process ID(s)
+	$ pgrep firefox
+	$ pgrep -f firefox
+# why is it so useful that we need a special tool?
+	> reason: we can combine it with expansions
+	$ renice -n 19 $(pgrep firefox)
 
-
-
+==================================
 
 
 
