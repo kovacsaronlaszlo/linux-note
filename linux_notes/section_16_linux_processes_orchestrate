@@ -198,6 +198,23 @@ lets send our first signal:
 
 ==================================
 
+the kill command
+# we can als send signals from other places to a process
+# usually, we use the "kill" command for this
+# important:
+	> the program is just called kill...
+	> but all it does is to send signal to programs
+# how do we send a SIGINT with kill?
+	> kill -s [SIGNAL] [process-ID]
+	> we first need to get the process ID of the process we
+	  would like to send the SIGINT to
+	> and then we can send the signal to the process:
+		$ kill -s SIGINT 12345
+			or
+		$ kill -SIGINT 12345
+
+==================================
+
 
 
 
