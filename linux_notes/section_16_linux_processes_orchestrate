@@ -170,6 +170,33 @@ getting the process ID for a program
 
 ==================================
 
+Signals
+# signals can be sent to processes, and they will interrupt tuhe process flow 
+  # at a convinient time
+# it's a mechanism to asynchronousrly notify a pcrocess of and event
+# the operating system:
+	> is responsible for delivering the signal to the process
+	> maintins a signal queue, so we can send a signal to every
+	  process (even to one that is not active right now)
+	> what kind of messages do signal deliver?
+		>> terminal: SIGINT (interrupt)
+		>> shell: SIGHUP (hangup)
+		>> window manager: SIGWINCH (window change)
+		>> other processes: SIGTERM (terminat process)
+		>> kernel:
+			- SIGKILL (kill process)
+			- SIGILL (illegal instruction)
+lets send our first signal:
+# used signal before
+# when we end a command with "CTRL + C" (sigint)
+# SIGINT:
+	> usually sent from the terminal to a program
+	> meant to indicate we would like it to stop and regain control
+	  over our terminal
+	> programs can listen to that signals and perform custom
+	  actions - including ignoring this signal!
+
+==================================
 
 
 
