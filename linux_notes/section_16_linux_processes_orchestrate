@@ -127,7 +127,32 @@ setting the priority of a process
 			$ nice -n 19 gedit
 	> we can also change the priority of an existing process:
 		>> renice -n 19 [process ID]
-	
+		>> example:
+			$ ps -ef | grep gedit
+			<user-name>  133818    2381  9 12:27 ?        00:00:00 /usr/bin/gedit --gapplication-service
+			<user-name>  133847  116168  0 12:27 pts/2    00:00:00 grep --color=auto gedit
+			$ renice -n 10 133818
+			133818 (process ID) old priority 0, new priority 10
+			$ renice -n 19 133818
+			133818 (process ID) old priority 10, new priority 19
+			$ renice -n 10 133818
+			renice: failed to set priority for 133818 (process ID): Permission denied
+			sudo renice -n 10 133818
+			133818 (process ID) old priority 19, new priority 10
+	> install sysbench
+		>> first update the system: sudo apt-get (or dnf) update
+		>> sudo apt-get install sysbench -y
+		>> run it like this:
+			$ sysbench cpu run --threads=10
+		>> make the gedit lower priotity and sysbrench upper priority:
+			$ renice -n 19 gedit
+			$ sudo nice -n -19 sysbench cpu run --threads=10
+			>> both program run syncronously but sysbrench has higher priority
+	> you can store kind of commands in a bash script, 
+	  and make runabel with chmod +x <file-name>.sh
+
+==================================
+
 
 
 
