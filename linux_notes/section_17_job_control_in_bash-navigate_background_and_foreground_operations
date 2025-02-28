@@ -26,4 +26,31 @@ background jobs in bash
 
 ==========================================
 
+list running jobs: jobs
+# list running jobs in the background
+# ping is running in the background
+# command:
+	$ jobs
+# output:
+	$ [1]+	Running		ping -c 10 google.com &
+
+job to foreground: fg
+# if we want to get a job back into foreground, use "fg" command
+	> fg [%job-ID]
+	> for example:
+		$ fg %1
+	> if there's just one job, it will automatically switch to
+	  that, and we dont need to specify the job ID:
+		$ fg
+		> if there're multiple jobs, it will switch to the current
+		  job (marked with a + in the jobs table
+# important:
+	> only foreground jobs can recieve keyboard input
+	> this alaso includes signals, such as SIGINT
+		>> ctrl+c
+		>> this will onyl ask foreground jobs / processes to quit themselves
+	> but it will not work for background jobs!
+
+==========================================
+
 
