@@ -427,11 +427,28 @@ monitoring system activity: top
 # we can start this program with the following command:
 	$ top
 	or
-	$ sudo top
+	$ sudo top // as root user
 
 ==================================
 
+deep dive: top
+# most important parameters:
+	> -u [username]: show only processes ownes by the specified user
+	> -d [seconds]: set the dealy between display updates, in seconds.
+			The default value is 3 seconds
+	> -i: start top with "idle" processes hidden. This shows only
+	      the processes that are currently using CPU resources
+	> -c: display the full command line used to start each process,
+	      instead of just the command name
+how to change the outup of top?
+# we also interactively change the output:
+	> "f" key: we can press the "f" key to further customize the output
+	> "k" key: we can send signals to processes with this key (k = kill)
+	> "r" key: we can change the niceness of processes
+	> "z" key: we can switch to color mode, and with the uppercase "Z"
+		   key, we can configure it
 
+==================================
 
 
 
