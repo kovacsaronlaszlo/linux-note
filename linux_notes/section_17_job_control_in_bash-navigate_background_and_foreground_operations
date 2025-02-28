@@ -78,7 +78,14 @@ how can we resume the job?
 
 ==========================================
 
+how can we kill a job?
+# we can kill a job with the "kill" command
+	> kill %[job-ID]
+	> this will wend SIGTERM to the job and will ask the job to terminate itself
+	> if this doesn't work, we could of course also send SIGKILL to a job:
+		$ kill -s SIGKILL %[job-ID]
 
+==========================================
 
 
 
