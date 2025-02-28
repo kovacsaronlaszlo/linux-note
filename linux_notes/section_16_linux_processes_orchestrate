@@ -450,10 +450,23 @@ how to change the outup of top?
 
 ==================================
 
+the program: htop
+# easier to use alternative to top
+# its aviavle on most linux systems, but might have to be installed as an additional 
+  # software
+# to install it:
+	$ sudo apt-get install htop
+		or
+	$ sudo dnf install htop
 
-
-
-
-
-
-
+# to start az root:
+	$ sudo htop
+# other options:
+	F7 decrease niceness
+	F8 increase niceness
+	F9 kill a program, we can choose which singal kill it
+	F6 sort by
+	F5 list which process use which process
+	F2 more advanced option menu
+	F4 filter in the list
+	F3 search in the list
