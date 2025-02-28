@@ -53,4 +53,32 @@ job to foreground: fg
 
 ==========================================
 
+job managemend: suspend program, resume it
+
+send a job to the background
+# if we are a foreground job, and would like to send it into the background...
+# we can suspend the job:
+	> we enter the suspend character (usually: ctrl + z)
+	> this internally send s SIGSTP signal to the programs involved
+	> SIGSTP?
+		>> nicerversion of the SIGSTOP signal: it asks the program to pause
+		   execution and return control to the terminal
+		>> a program could ignore it though
+	> the job can be resumed
+
+how can we resume the job?
+# we can resume a job in the foreground:
+	> fg %[job-ID]
+# we can also resume a job as a background job:
+	> fg %[job-ID] &
+		or
+	> bg %[job-ID]
+# when continuing:
+	> a SIGCONT signal is sent to the program
+
+==========================================
+
+
+
+
 
