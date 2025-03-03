@@ -87,5 +87,20 @@ how can we kill a job?
 
 ==========================================
 
+stop jobs with output: stty
+
+stop jobs with output
+# we can set a bash option:
+	> stty tostop
+	> stty is a toll change / print the terminal line settings
+	> by setting the tostop option, we can tell it to suspend the job if it
+	  creates any output
+	> when we now start a background job it will run until it
+	  creates any output
+	> once it write any outout, the job will be suspended immadiately
+	> to disable this feature again:
+		$ stty -tostop
+
+==========================================
 
 
