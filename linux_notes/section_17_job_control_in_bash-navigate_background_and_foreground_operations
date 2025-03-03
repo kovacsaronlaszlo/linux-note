@@ -103,4 +103,35 @@ stop jobs with output
 
 ==========================================
 
+waiting for jobs: wait
+
+# let's say we have 3 downloads, and they're all running in the background
+# how can we wait for them and execute another command once all of them are done?
+
+# the "wait" command:
+	> with wait, we can wait for backgroun jobs
+	$ wait
+		>> waits until all currently running jobs have changes their state
+	$ wait 123
+		>> waits for process with th ID 123
+	$ wait %1
+		>> waits only for background job #1
+	$ wait -n 
+		>> waits for any job to be completed
+# example:
+	$ ping -c 25 google.com > /dev/null &
+	[1] 27650
+	$ ping -c 25 google.com > /dev/null &
+        [1] 27652
+	$ ping -c 25 google.com > /dev/null &
+        [1] 27654
+	$ wait; echo 'hello!!!'
+	[1]	Done		ping -c 25 google.com > /dev/null
+	[2]-	Done            ping -c 25 google.com > /dev/null
+	[3]+    Done            ping -c 25 google.com > /dev/null 
+	hello!!!
+	$
+
+==========================================
+
 
