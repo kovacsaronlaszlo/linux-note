@@ -283,9 +283,24 @@ Verifying installation: debsums
 
 ================================================
 
+dependency management
+# we got 2 tools, with at least on dependency:
+	> bash: wants libc5 >= 2.35
+	> zsh: want libc6 >= 2.36
+# in this case, the solution is easy:
+	> we can install libc6 in version 2.36
+	> and if we're currently on version 2.35, when we install zsh, 
+	  we just upgrade libc6 version 2.36
+	> so unsually, "apt" should resolve dependency issues automatically
 
+show dependencies
+# We can show the dependencies of packages with the
+# following commands:
+	$ sudo apt show bash
+		or
+	$ sudo apt-cache show bash
 
-
+================================================
 
 
 
