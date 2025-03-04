@@ -1,0 +1,12 @@
+Package management centos
+
+# Lot of similarity of ubuntu package management (section 18)
+# Simplified package flow
+	> fedora -> centos stream -> RHEL
+# Red Hat Enterprise Linux
+	> centos stream is a rolling preview of RHEL
+	> thus, package managmenet should behave extremly similar
+	> less potential issues in RHEL
+
+===================================
+
