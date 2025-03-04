@@ -112,5 +112,48 @@ Updating package definitions
 
 ================================================
 
+Keeping our system up to date
+
+Manging upgrades
+# We want to keep our system up to date
+# We thus want to install available updates on out system
+# How do we do this?
+	$ sudo apt upgrade
+		or
+	$ sudo apt-get upgrade --with-new-pkgs
+# What will this do?
+	> This will install all available and possible updates - and even
+	  install additionla dependencies (if they become necessary)
+	> It will never remove any packages from our system, even if
+	  they're no longer needed
+
+Managing updates (full-upgrades / dist-upgrade)
+# If we want to have a bigger upgrade, we need to allow apt to
+# unistall pacakges as well
+	> sudo apt full-upgrade
+		or
+	> sudo apt-get dist-upgrade
+# This will:
+	> try to install all available and possible upgrades
+	> uninstall dependencies of this required in prder to install
+	  the upgrade
+	> example fro this:
+		>> package A depdends on Package B (v1.0)
+		>> package a is updated, now depending on Package C (v1.0)
+		   which conflicts with Pacakges b (v1.0)
+		>> pakcage B in uninstalled during dist-upgrade
+
+# warning: dist-upgrade
+	> be careful with the dist-upgrade / full-upgrade
+	> it can remove programs you were relying on, 
+	  in order to solve dependency problems
+	> thus, be sure to:
+		>> really read the output of what it wants to do
+		>> have a backup
+		>> have enough time to fix potential problems
+
+================================================
+
+
 
 
