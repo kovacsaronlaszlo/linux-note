@@ -154,6 +154,19 @@ Managing updates (full-upgrades / dist-upgrade)
 
 ================================================
 
+auto-removing packages: autoremove
+# full-upgrade/ dist-upgrade only uninstall dependencies, if
+# they're exclusive and need to be uninstalled
+
+# All other dependencies will remain installed, even if they're 
+# no longer needed
+
+# To insitall those, we need to execute the following command:
+	$ sudo apt autoremove
+		or
+	$ sudo apt-get autoremove
+
+================================================
 
 
 
