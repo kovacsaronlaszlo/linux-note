@@ -232,6 +232,57 @@ Third party packages: ppa
 
 ================================================
   
+Verifying installation: debsums
+# A lot of packages ship with a list of md5 checksum of the files
+# they're installing on our system
+
+# We can use those checksum to verify if the files that have been
+# installed are still identical
+
+# Important:
+	> md5 is considered insecure
+	> A malicious actor might be able to generate an executable, that
+	  doeas something different, but still yields the same checksum
+	> Still, it's enough for 99%+ exact overview
+
+# We can verify all pacakges that contain an md5 sum with the
+# command debsum:
+	> debsums [package / .deb file]
+	> we might have to install it first:
+		$ sudo apt install debsums
+# important paramters:
+	> -a : list all files (inclusing configuration files)
+	> -l : list packages, that dont have to list of files with their md5 sum
+	> -s: Silent, only list errors
+# example:
+	$ sudo debsums -a -s
+	debsums: missing file /DEBIAN/prerm (from docker-desktop package)
+	...
+	debsums: changed file /usr/sbin/start-stop-daemon (from dpkg package)
+	debsums: changed file /etc/systemd/resolved.conf (from systemd-resolved package)
+	> maybe it list other files, those files above just examples from my system
+	
+	$ sudo debsums -l
+	$
+	
+	$ sudo touch /bin/test123
+	$ sudo chmod +x /bin/test123
+	$ test123
+	$ test1234
+	test1234: command not found
+	$ sudo debsums -a -s
+	debsums: missing file /DEBIAN/prerm (from docker-desktop package)
+        ...
+        debsums: changed file /usr/sbin/start-stop-daemon (from dpkg package)
+        debsums: changed file /etc/systemd/resolved.conf (from systemd-resolved package)
+	> not find because its not a package
+	
+# good thie debsums if you want to use a server (not yours)
+# and want to check if everything is okay with that server
+# no changes or other not safe program changes
+
+================================================
+
 
 
 
