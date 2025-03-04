@@ -138,7 +138,7 @@ keep a program running: nohup
 
 # we can use the "nohup" command, to launch a program that will remain open even if
 # we close our terminal
-	$ nihup ping -c 100 google.com $
+	$ nohup ping -c 100 google.com $
 # this will:
 	> start the program ping, which will be run in the background
 	> it will keep running, even if we close our terminal (or log out)

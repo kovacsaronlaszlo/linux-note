@@ -1,0 +1,19 @@
+what is package management?
+
+# definition: process of installing, updating, configuring, and removing software
+# purpose: streamline software handling on a linux system
+# why do we need it?
+	> facilities easy software distribution
+	> simplifies software
+	> ensures software compatiblity
+	> handles dependencies
+	> maintians system stability and security
+# need to be careful:
+	> package management is quite different between different linux distributions
+# uses apt / apt-get and dpkg
+# or package management with snap
+
+================================================
+
+
+	
