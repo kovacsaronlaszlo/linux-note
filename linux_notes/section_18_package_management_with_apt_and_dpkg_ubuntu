@@ -365,7 +365,51 @@ Conflict resolution:
 
 ================================================
 
+Trigger reconfigure with dpkg
 
+Reconfiguring packages
+# Sometimes packages asks us questions when we install them
+# Or they run configuration when we install them on our system
+# Example:
+	> a Bootloader (for example grub) might want to install itself as
+	  the main bootloader
+	> a webserver might set itself up in a way that a user and group is
+	  created and that it automatically starts with our system
+	> a display manager (manages the login screen) might start a
+	  dialog to ask us which on should be the default display
+	  manger
+	> sometimes we want to re-run those scripts
+	> we can do if with the following command:
+		>> sudo dpkg-reconfigure <package>
+
+# Other example:
+	> we install the package "locales" the first time
+	> this packages asks us which locales we want to generate
+	> what is a locale?
+		>> it defines how numbers and dates should be displayed
+		>> a lot of programming languages rely on the operating system to
+		   provide this functionality
+		>> for example, if we want to have a website (in php),
+		   and we want to use the build-in functions to format dates
+		>> the corresponding locale must be generated
+			$ date +%d
+			04
+			$ date +%d/%m
+			04/03
+			$ date +%m/%d
+			03/04
+			$ date +%m/%d/%y
+			03/04/25
+			$ date +%A
+			Tuesday
+			$ sudo dpkg-reconfigure locales
+			- choose which locales you want to use!
+			...
+			Generation complete.
+			$ LC_ALL=de_DE.UTF-8 date +%A
+			Dienstag
+
+================================================
 
 
 
