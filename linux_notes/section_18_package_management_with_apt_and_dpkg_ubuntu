@@ -302,5 +302,70 @@ show dependencies
 
 ================================================
 
+Conflict resolution:
+# dependency conflict:
+	> we got 2 tools, with different dependencies:
+		>> bash: wants libc6 <= 2.35
+		>> zsh: wants libc6 >= 2.36
+	> we now would want to isntall both tools on our system
+	> which version of libc6 should we install?
+	> we now have a problem:
+		>> we cant satisy either dependency requirement
+		>> apt is not able to resolve this dependency conflict
+	> we must manually resolve this!
+# how do we solve a dependency conflict?
+	> we ask apt to autoamtically fix the dependency issue for us:
+		$ sudo apt install -f
+			or
+		$ sudo apt-get install -f
+		
+		>> -f stands for "--fix-broken"
+		>> "apt" will analyze the current package state, identify
+		   inconsistencies, and solve them by installing, upgrading or
+		   removing packages
+		>> in 75%+ of cases, this should resolve the problem 
+		   (for packages from the default repositories)
+# example:
+	> find an old package of "zsh"
+	$ sudo dpkg -i --force-all <zsh_5.0.5-...>.deb
+	> we will get some warnings and maybe some errors too
+	> in case of error(s) the install wont be done
+
+
+# How do we solve a dependency conflict? (part 2)
+	> we run an update / upgrade of our system:
+		$ sudo apt full-update
+			or
+		$ sudo apt-get dist-update
+
+		>> this works especially well before we try to install additional
+		   software
+
+	> it this doesnt work:
+		$ sudo apt autoremove
+			or
+		$ suro apt-get autoremove
+		
+		>> lets automatically uninstall all packages that are no longer 
+		   needed
+		>> this sometimes solve the problem
+
+# Best pratice:
+	> avoid third-party repositories (if possible)
+	> avoid installin software with .deb file (if possible)
+	> regularly install all normal software updates (always)
+	> before upgrading to a new ubuntu version:
+		>> plan some extra time for dependency issues
+		>> wait a month or twi after release of new Ubuntu version
+		   (especially when using third-party repositories)
+		>> create a complete backup for your system
+	> use LTS (=long term support) version of ubuntu for servers - 
+	  less upgrades, less problems
+	> consider using tools like docker to containerize your application
+
+================================================
+
+
+
 
 
