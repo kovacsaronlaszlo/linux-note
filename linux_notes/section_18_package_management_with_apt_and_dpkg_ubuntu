@@ -15,5 +15,36 @@ what is package management?
 
 ================================================
 
+dpkg: debian package manager
+# On the lowest level, "dpkg" is responsible for installing software packages
+
+# Those packages are distributed as .deb files, and we can install
+# them through dpkg:
+	> dpkg -i pacakge.deb
+
+# A .deb file is a compressed archive (ar file format) with all the
+# files needed for the program, and its installation on the system
+
+# How do we get those software packages?
+	> automatically
+	> manually
+# check the system:
+	$ lsb_release -a
+	No LSB modules are available.
+	Distributor ID:	Ubuntu
+	Description:	Ubuntu 24.04.2 LTS
+	Release:	24.04
+	Codename:	noble
+
+# example:
+	> download a package (for example: neofetch) from https://packages.ubuntu.com/
+	$ cd ~/Downloads
+	$ sudo dpkg -i neofetch_<version>.deb
+	
+# to unistall it:
+	$ sudo dpkg -r neofetch
+
+================================================
+
 
 	
