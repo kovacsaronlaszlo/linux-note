@@ -168,5 +168,31 @@ auto-removing packages: autoremove
 
 ================================================
 
+Format of the repository file
+
+How does the sources.list work?
+
+# The system reads the following file(s) for its repositories:
+	> /etc/apt/sources.list
+	> /etc/apt/sources.list.d/*
+
+# Whats the systax of the /etc/apt/sources.list?
+	> deb http://ports.ubuntu.com/ubuntu-ports/ jammy main restricted
+	> <type> <uri> <distribution> <domain1> <domain2> ...
+	> <type>:
+		>> deb: This repository contains binary packages
+		>> deb-src: This repository contains source packages
+	> <uri>: The address of the repository
+	> <distributions>: The ubuntu version, we want to download the packages for
+	
+	<domain>			Free software		Non-Free software
+	
+	Officially supported by
+	Canonical			main			restricted
+	
+	Communtity
+	supported/Third party		universe		multiverse
+
+================================================
 
 
