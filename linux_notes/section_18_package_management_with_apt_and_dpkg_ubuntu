@@ -177,7 +177,7 @@ How does the sources.list work?
 	> /etc/apt/sources.list.d/*
 
 # Whats the systax of the /etc/apt/sources.list?
-	> deb http://ports.ubuntu.com/ubuntu-ports/ jammy main restricted
+	> deb https://ports.ubuntu.com/ubuntu-ports/ jammy main restricted
 	> <type> <uri> <distribution> <domain1> <domain2> ...
 	> <type>:
 		>> deb: This repository contains binary packages
@@ -218,7 +218,7 @@ Third party packages: ppa
 # personal pacakge achive:
 	> this will usually work only on ubuntu, not on Debian systems
 	> its a website where users can easily provide repositories for others:
-	  http://lauchpad.net/ubuntu/+ppa
+	  https://lauchpad.net/ubuntu/+ppa
 	> for example, for the lates php version, we could just add a ppa:
 		$ sudo add-apt-repository ppa:ondrej/php
 		$ sudo apt update
@@ -411,5 +411,69 @@ Reconfiguring packages
 
 ================================================
 
+Snap pacakges
 
+Package management with "snap"
+# We have now seen how delicate "apt" work
 
+# One dependency can be extremely problematic and cause apt to fail or
+# to be unable to resolve it
+
+# All the dependencies must be installed globally
+
+# Snap solve this:
+	> we bundle an application with all its dependencies
+	> the download might be larger, because the dependencies are included
+	> but this allows each application can have different dependencies
+	> and this package can be independent from the linux distribution
+	> packages should be updated automatically in the background (snapd)
+	  otherwise we can trigger it:
+		$ snap refresh
+
+How do snap packages work?
+# Snap is a centralized repository for complete applications:
+	> people can publish their applications to that repository
+	> if we install a snap application, we shluld make sure taht we 
+	  trust the authors!
+	> we can have a look at the available packages here:
+		https://snapcraft.io/
+
+# install gimp app:
+	$ sudo snap install gimp
+	...
+	$ cd /var/lib/snapd
+	apparmor     cgroup   device       hostfs   seccomp   snapshots   system-key
+	assertions   cookie   environment  inhibit  seed      ssl         void
+	auto-import  dbus-1   features     lib      sequence  state.json
+	cache        desktop  firstboot    mount    snaps     state.lock
+	$ cd snaps
+	$ ls
+	bare_5.snap        firmware-updater_147.snap    partial
+	core_17200.snap    firmware-updater_167.snap    snapd_21759.snap
+	core18_2846.snap   gimp_484.snap                snapd_23545.snap
+	core18_2855.snap   gnome-3-28-1804_198.snap     snapd-desktop-integration_178.snap
+	core20_2496.snap   gnome-3-38-2004_143.snap     snapd-desktop-integration_253.snap
+	core22_1722.snap   gnome-42-2204_176.snap       snap-store_1173.snap
+	core22_1748.snap   gnome-42-2204_202.snap       snap-store_1248.snap
+	firefox_5751.snap  gtk2-common-themes_13.snap
+	firefox_5783.snap  gtk-common-themes_1535.snap
+	$ cd /snap/
+	bare    core20            gimp             gtk2-common-themes  snapd-desktop-integration
+	bin     core22            gnome-3-28-1804  gtk-common-themes   snap-store
+	core    firefox           gnome-3-38-2004  README
+	core18  firmware-updater  gnome-42-2204    snapd
+	$ cd gimp
+	$ ls
+	484  current
+	$ cd current
+	$ ls
+	bin  data-dir  etc  lib  meta  sbin  snap  usr  var
+	$ cd /snap/bin
+	$ ls
+	firefox              firmware-updater  gimp        snap-store.show-updates
+	firefox.geckodriver  geckodriver       snap-store
+	$ gimp
+	Cannot open display:
+	$ which gimp
+	/snap/bin/gimp
+	$
