@@ -195,4 +195,27 @@ How does the sources.list work?
 
 ================================================
 
+Custom repositories
+# We can add additional repositories to our apt source
+# If we were to do manual:
+	> We create a new file in /etc/apt/source.list.d
+	> usually: we need to add the GPG key to our system for this repository
+	> this is needed so that our system trusts the third-party repository
+	> usually wherever you find an installation guide for thhis, they will
+	  explain all the steps required
+	> Important:
+		>> the third-party repository could install any software on our system
+		>> it could for example say: I got bash in version 100000 - 
+		   and our system sould trust this and update it
+		>> even if bash was installed from the offial repository before
+# example (198th video has an example to install wine program)
+
+================================================
+
+
+
+
+
+
+
 
