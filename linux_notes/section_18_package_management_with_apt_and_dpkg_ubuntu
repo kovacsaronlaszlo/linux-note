@@ -46,5 +46,71 @@ dpkg: debian package manager
 
 ================================================
 
+dependency management with apt
 
-	
+# dpkg was able to install -deb pacakges on our system
+# But we were able to install dependencies throught it
+# Thus, we need another tool, that builds on top of dpkg. We can
+# choose on of the following:
+	> apt-get:
+		>> stable api, we should us this when we're writing scripts
+	> apt:
+		>> api and paramteres might change when deemed necessary
+
+A package source / repository in apt
+# apt-get / apt needs to know which packages are available, and
+# where it can download them from
+
+# We thus need to connect to central repositories, which provide 
+# our packages
+
+# Those central repositories are stored in the following files:
+	> repositories from the system:
+		>> /etc/apt/sources.list
+	> additional (third party) repositories:
+		>> /etc/apt/sources.list.d/*
+# important:
+	> those repositories provide a list with packages, their versions, ...
+	> we must fully trust those repositories
+	> they could even replace software on our system
+
+# example:
+	> check the /etc/apt/sources.list
+	$ nano /etc/apt/sources.list
+	> check the /etc/apt/sources.list.d/
+	$ ls /etc/apt/sources.list.d/
+		(if it's empty, no problem)
+
+
+Updating package definitions
+
+# Once we have our repositories, we need to update the "package definitions"
+# This means, that we fetch the latest list of available pacakges 
+# from the repositories
+
+# We can do this with the following command:
+	$ sudo apt update
+		or
+	$ sudo apt-get update
+
+# After this, we're able to install software on our system
+	> if we want to install neofetch, we could now do it:
+		$ sudo apt isntall neofetch
+		>> this pacakge is then installed - and all dependencies 
+		   (additional pacakges) needed to execute "neofetch"
+		>> "apt" will remember, which package we installed manually, 
+		   and which packages were just installed as dependencies 
+# example:
+	$ sudo apt install neofetch
+	...
+	> during the installation the program will install other packages
+	> if we dont want to install those:
+	$ sudo apt install --no-install-recommends neofetch
+
+# to remove pacakge:
+	$ sudo apt remove [package-name]
+
+================================================
+
+
+
