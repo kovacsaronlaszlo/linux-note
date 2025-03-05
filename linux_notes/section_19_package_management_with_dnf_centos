@@ -10,3 +10,46 @@ Package management centos
 
 ===================================
 
+The .rpm package format
+
+# .rpm without package manager:
+	> .rpm are archive that contain all the files & configuration
+	  required to install a software
+	> we could dowload .rpm files manually, for example from:
+		>> https://mirror.stream.centos.org/
+		>> download an .rpm package from the link above
+		$ cd Dowloads
+		$ du -s zsh-<version>.<processor-type>.rpm
+		4032	zsh-<version>.<processor-type>.rpm
+		>> we should usually avoid this, as it can easily lead to conflict
+	> We can then inspect the .rpm file:
+		>> rpm -gpl [file].rpm
+		$ rpm -gpl zsh-<version>.<processor-type>.rpm
+		...
+		(list of files will be installed to our system would be install this file)
+		$ rpm --help
+		(doc wich tell us how to use the rpm program)
+		>> -q (--group): verify package(s) in group
+		>> -p (--package): verify a package file
+		>> -l (--list): list files in package
+		$ rpm -g -p -l zsh-<version>.<processor-type>.rpm
+		...
+		(we get the same list above)
+	> or install the .rpm file manually:
+		>> rpm -i [file].rpm
+		$ rpm -i zsh-<version>.<processor-type>.rpm
+		error: ... /var/lib/rpm/.rpm.lock (Permission denide)
+		$ sudo rpm -i zsh-<version>.<processor-type>.rpm
+		[sudo] password for root: 
+		$ sudo rpm -i zsh-<version>.<processor-type>.rpm
+			package zsh-<version>.<processor-type>.rpm is already installed
+	> to uninstall package:
+		>> rpm -e [package]
+		$ sudo rpm -e zsh
+		(but the dependencies might cannot be resolved)
+
+===================================
+
+
+
+
